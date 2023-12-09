@@ -21,7 +21,7 @@ const page = async () => {
           <Cards
             key={message.id}
             message={message.content}
-            sentAt={message.createdAt.toLocaleString()}
+            sentAt={message.createdAt.toLocaleString('en-US', { timeZone: 'Asia/Kolkata' })}
           />
         ))}
         {allMessages.length === 0 && (
