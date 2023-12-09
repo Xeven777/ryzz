@@ -17,6 +17,7 @@ const SendMessages = ({ params: { id } }: Props) => {
         <h1>What are You waiting for? Start getting anonymous messages!</h1>
         <Link
           href="/"
+          target="__blank"
           className="py-2 mt-5 mx-auto rounded bg-primary text-sm text-primary-foreground w-[110px] text-center"
         >
           Lets Goo!
