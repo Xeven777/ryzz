@@ -1,6 +1,5 @@
 "use client";
 import Link from "next/link";
-import next from "@/../public/next.svg";
 import Image from "next/image";
 import { UserButton } from "@clerk/nextjs";
 
@@ -14,8 +13,7 @@ export default function Navbar() {
               href="/dashboard"
               className="flex items-center justify-center gap-2"
             >
-              <Image src={next} height={20} alt="NGL" className="invert"/>
-              <h1 className="text-3xl font-bold text">NGL</h1>
+              <h1 className="text-3xl font-bold">RYZZ</h1>
             </Link>
           </div>
 
