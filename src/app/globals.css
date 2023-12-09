@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
- 
 
 @layer base {
   :root {
@@ -27,12 +26,17 @@
     --radius: 0.5rem;
   }
 }
-.invert{
+.invert {
   filter: invert(1);
 }
- 
-*{
-  font-family: 'Inter', sans-serif;
+
+::selection {
+  background-color: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+}
+
+* {
+  font-family: "Inter", sans-serif;
 }
 
 @layer base {

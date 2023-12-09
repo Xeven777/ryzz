@@ -6,10 +6,11 @@ type Props = {
 };
 
 const SendMessages = ({ params: { id } }: Props) => {
-
   return (
-    <div className="flex items-center justify-center p-24">
-      <Form userId={id}/>
+    <div className="flex flex-col items-center justify-center p-24 gap-3">
+      <h2 className="text-2xl md:text-5xl">Ryzz</h2>
+      <p className="text-purple-200/70">Send Anonymous messages here </p>
+      <Form userId={id} />
     </div>
   );
 };

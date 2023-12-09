@@ -35,8 +35,8 @@ const Form = ({userId}:Props) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <Textarea value={message} onChange={(e) => setMessage(e.target.value)} />
-      <Button type="submit">Send</Button>
+      <Textarea placeholder="Show your Ryzz 🤪" value={message} className=" w-[400px]" onChange={(e) => setMessage(e.target.value)} />
+      <Button type="submit" className="my-4">Send</Button>
     </form>
   );
 };
