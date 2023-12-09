@@ -8,14 +8,11 @@ interface Props {
   userId: string;
 }
 
-
-const Form = ({userId}:Props) => {
-
-
+const Form = ({ userId }: Props) => {
   const [message, setMessage] = useState("");
   const handleSubmit = async (event: React.FormEvent) => {
     console.log("handleSubmit");
-    const content=message;
+    const content = message;
     console.log("message", content);
     event.preventDefault();
     if (!content) {
@@ -23,7 +20,7 @@ const Form = ({userId}:Props) => {
     } else {
       await fetch("/api/messages", {
         method: "POST",
-        body: JSON.stringify({ content,userId }),
+        body: JSON.stringify({ content, userId }),
         headers: {
           "Content-Type": "application/json",
         },
@@ -34,9 +31,16 @@ const Form = ({userId}:Props) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <Textarea placeholder="Show your Ryzz 🤪" value={message} className=" w-[400px]" onChange={(e) => setMessage(e.target.value)} />
-      <Button type="submit" className="my-4">Send</Button>
+    <form onSubmit={handleSubmit} className="flex flex-col items-center w-full">
+      <Textarea
+        placeholder="Show your Ryzz 🤪"
+        value={message}
+        className="min-w-[220px] w-5/12"
+        onChange={(e) => setMessage(e.target.value)}
+      />
+      <Button type="submit" className="my-4">
+        Send
+      </Button>
     </form>
   );
 };
