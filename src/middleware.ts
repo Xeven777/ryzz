@@ -1,10 +1,7 @@
 import { authMiddleware } from "@clerk/nextjs/server";
 
 export default authMiddleware({
-  publicRoutes: (req) => {
-    // Make "/" and all pages under "/send/[id]" public
-    return req.url === "/" || req.url.startsWith("/send/");
-  },
+  publicRoutes: ["/", "/send/*"],
 });
 
 export const config = {
