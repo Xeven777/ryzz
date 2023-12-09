@@ -8,7 +8,7 @@ datasource db {
 }
 model Message {
   id        String  @id @default(auto()) @map("_id") @db.ObjectId
-  content   String?
+  content   String
   userId    String
   createdAt DateTime @default(now())
   

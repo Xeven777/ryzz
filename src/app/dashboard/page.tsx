@@ -15,10 +15,20 @@ const page = async () => {
   return (
     <>
       <Share userId={userId} />
-      <div>{JSON.stringify(allMessages)}</div>
-      <div>Hello !</div>
+      <h1 className="md:text-5xl text-3xl mt-7 mb-3">Your Inbox !💌</h1>
       <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1">
-        <Cards message="Yo man" sentAt="today"/>
+        {allMessages.map((message) => (
+          <Cards
+            key={message.id}
+            message={message.content}
+            sentAt={message.createdAt.toLocaleString()}
+          />
+        ))}
+        {allMessages.length === 0 && (
+          <div className="text-center col-span-full">
+            No Messages found. Share Link above and start getting messages!!
+          </div>
+        )}
       </div>
     </>
   );

@@ -35,7 +35,7 @@ const Share = ({ userId }: Props) => {
 
   return (
     <>
-      <h1 className="text-2xl md:text-5xl font-bold my-5">Share your Link</h1>
+      <h1 className="text-xl md:text-3xl font-bold my-5">Share your Link</h1>
       <div className="flex flex-row items-center gap-2 md:gap-6 flex-wrap">
         <Link
           href={`/send/${userId}`}
