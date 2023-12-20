@@ -43,10 +43,7 @@
   text-shadow: 0 0 15px hsl(var(--primary-foreground));
 }
 
-h1,
-h2,
-h3,
-h4 {
+.mont{
   font-family: "Montserrat", sans-serif;
 }
 body {

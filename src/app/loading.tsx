@@ -7,7 +7,7 @@ const Loading = () => {
       <h1 className="md:text-8xl text-6xl font-bold className__myfont_fc33664f__b6a01139 bg-clip-text text-transparent bg-gradient-to-tl from-violet-600 via-purple-700 to-fuchsia-400 p-6">
         Ryzz
       </h1>
-      <h2 className="text-slate-800 text-lg p-2">Loading...</h2>
+      <h2 className="text-slate-800 text-lg p-2 mont">Loading...</h2>
       <Loader2 className="text-purple-700 animate-spin" size={50} />
     </div>
   );

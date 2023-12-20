@@ -16,7 +16,7 @@ const page = async () => {
   return (
     <>
       <Share userId={userId} />
-      <h1 className="md:text-5xl text-3xl mt-8 mb-1 tracking-tighter font-bold ">
+      <h1 className="md:text-5xl text-3xl mt-8 mb-1 tracking-tighter font-bold mont">
         <span className="bg-gradient-to-br from-zinc-600 to-zinc-950 text-transparent bg-clip-text">
           Your{" "}
         </span>
@@ -26,7 +26,7 @@ const page = async () => {
         ! 💌
       </h1>
 
-      <p className="font-semibold text-lg text-muted-foreground px-1">
+      <p className="font-semibold text-lg text-muted-foreground px-1 mont">
         Ryzz meter : {allMessages.length} 🔥
       </p>
 

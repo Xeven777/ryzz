@@ -30,7 +30,7 @@ const Share = ({ userId }: Props) => {
 
   return (
     <>
-      <h1 className="text-xl md:text-3xl font-bold mt-5 mb-3">
+      <h1 className="text-xl md:text-3xl font-bold mt-5 mb-3 tracking-tight text-zinc-800 mont">
         Share your Link
       </h1>
       <div className="flex flex-row items-center gap-2 md:gap-6 flex-wrap">
@@ -42,7 +42,7 @@ const Share = ({ userId }: Props) => {
         </Link>
         <button
           onClick={copyLink}
-          className="max-w max-w-min bg-primary text-primary-foreground hover:bg-primary/90 inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 font-medium"
+          className="max-w max-w-min bg-primary text-primary-foreground hover:bg-primary/90 inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 font-medium"
         >
           Copy Link <Copy size={16} className="ml-2" />
         </button>
