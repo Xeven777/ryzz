@@ -8,8 +8,10 @@ export default function Home() {
   if (userId) redirect("/dashboard");
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-24">
-      <h1 className="text-3xl md:text-6xl text-center font-extrabold mx-auto my-10">Ryzz</h1>
+    <main className="flex min-h-screen flex-col items-center justify-center p-24 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-cyan-400 via-blue-500 to-purple-600 ">
+      <h1 className="logo ryzz text-white text-3xl md:text-6xl text-center font-extrabold mx-auto my-10">
+        Ryzz
+      </h1>
       <Button asChild>
         <Link href="/dashboard">Start Now</Link>
       </Button>

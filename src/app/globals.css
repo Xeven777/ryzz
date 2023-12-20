@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: "demo";
+  font-family: "script";
   src: url("../fonts/Beautiful Vibes - Bold Script Vintage Retro Font/2. TTF/Beatiful Vibes.ttf");
 }
 
@@ -39,6 +39,7 @@
 ::selection {
   background-color: hsl(var(--primary));
   color: hsl(var(--primary-foreground));
+  text-shadow: 0 0 15px hsl(var(--primary-foreground));
 }
 
 * {
@@ -46,7 +47,11 @@
 }
 
 .logo {
-  font-family: "demo", sans-serif;
+  font-family: "script", sans-serif;
+}
+
+.ryzz{
+  text-shadow: 0 0 20px #ffffffb9
 }
 
 @layer base {
@@ -54,6 +59,6 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground min-h-screen;
   }
 }
