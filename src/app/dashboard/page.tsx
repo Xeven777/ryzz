@@ -2,6 +2,7 @@ import { auth } from "@clerk/nextjs";
 import prisma from "../../lib/db/prisma";
 import Share from "@/components/Share";
 import Cards from "@/components/Cards";
+import Refresh from "@/components/Refresh";
 
 const page = async () => {
   const { userId } = auth();
@@ -15,15 +16,23 @@ const page = async () => {
   return (
     <>
       <Share userId={userId} />
-      <h1 className="md:text-5xl text-3xl mt-8 mb-3 tracking-tighter font-bold ">
-        <span className="bg-gradient-to-br from-zinc-600 to-zinc-950 text-transparent bg-clip-text">Your </span>
+      <h1 className="md:text-5xl text-3xl mt-8 mb-1 tracking-tighter font-bold ">
+        <span className="bg-gradient-to-br from-zinc-600 to-zinc-950 text-transparent bg-clip-text">
+          Your{" "}
+        </span>
         <span className="tracking-normal bg-gradient-to-br from-purple-400 via-purple-600 to-purple-800 text-transparent bg-clip-text">
           INBOX
         </span>{" "}
         ! 💌
       </h1>
-      <p className="font-semibold text-lg text-muted-foreground px-2">Ryzz meter : {allMessages.length} 🔥</p>
-      <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-2 max-w-6xl">
+
+      <p className="font-semibold text-lg text-muted-foreground">
+        Ryzz meter : {allMessages.length} 🔥
+      </p>
+
+      <Refresh />
+
+      <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-2 max-w-6xl py-3">
         {allMessages.map((message) => (
           <Cards
             key={message.id}

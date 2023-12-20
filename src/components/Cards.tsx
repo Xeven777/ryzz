@@ -21,14 +21,13 @@ const Cards = ({ message, sentAt, messageId }: Props) => {
   async function handleDelete() {
     setLoading(true);
     try {
-      const response = await fetch("api/messages", {
+      await fetch("api/messages", {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ id: messageId }),
       });
-      console.log(response);
       setDeleted(true);
     } catch (error) {
       console.log(error);

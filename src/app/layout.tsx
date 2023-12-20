@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Toaster } from "@/components/ui/toaster";
 import { ClerkProvider } from "@clerk/nextjs";
+import localFont from 'next/font/local'
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -26,6 +27,8 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
 };
+
+
 
 export default function RootLayout({
   children,
