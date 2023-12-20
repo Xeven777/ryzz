@@ -45,7 +45,7 @@ export default function RootLayout({
         variables: { colorPrimary: "#6C47FF" },
       }}
     >
-      <html lang="en" className={myFont.className}>
+      <html lang="en" >
         <body>{children}</body>
         <Toaster />
       </html>
