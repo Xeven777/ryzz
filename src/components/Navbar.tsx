@@ -12,7 +12,7 @@ export default function Navbar() {
               href="/dashboard"
               className="flex items-center justify-center gap-2"
             >
-              <h1 className="text-4xl font-bold className__myfont_fc33664f__b6a01139 bg-clip-text text-transparent bg-gradient-to-tl from-violet-600 via-purple-700 to-fuchsia-400">
+              <h1 className="text-4xl font-bold __className_938c5f bg-clip-text text-transparent bg-gradient-to-tl from-violet-600 via-purple-700 to-fuchsia-400">
                 Ryzz
               </h1>
             </Link>

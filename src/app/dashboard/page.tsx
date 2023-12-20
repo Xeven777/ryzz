@@ -44,7 +44,7 @@ const page = async () => {
           />
         ))}
         {allMessages.length === 0 && (
-          <div className="text-center col-span-full p-2 mt-16 md:text-lg text-muted-foreground">
+          <div className="text-center col-span-full p-2 mt-16 md:text-lg text-muted-foreground lato">
             No Messages found. Share Link above and start getting messages!!
           </div>
         )}

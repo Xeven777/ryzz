@@ -3,7 +3,7 @@ import { RefreshCcw } from "lucide-react";
 
 const Refresh = () => {
   return (
-    <div className="flex text-sm text-muted-foreground items-center gap-2">
+    <div className="flex text-sm text-muted-foreground items-center gap-2 lato">
       Check for new messages ;)
       <button
         type="button"
