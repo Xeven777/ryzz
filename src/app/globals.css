@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@400;500;600;700;800&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -42,16 +43,21 @@
   text-shadow: 0 0 15px hsl(var(--primary-foreground));
 }
 
-* {
-  font-family: "Inter", sans-serif;
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Montserrat", sans-serif;
 }
-
+body {
+  font-family: "Lato", sans-serif;
+}
 .logo {
   font-family: "script", sans-serif;
 }
 
-.ryzz{
-  text-shadow: 0 0 20px #ffffffb9
+.ryzz {
+  text-shadow: 0 0 20px #ffffffb9;
 }
 
 @layer base {

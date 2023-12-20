@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { useToast } from "@/components/ui/use-toast";
-import { Button } from "../components/ui/button";
 import { Textarea } from "../components/ui/textarea";
 
 interface Props {
@@ -52,13 +51,19 @@ const Form = ({ userId }: Props) => {
       />
 
       {loading ? (
-        <Button className="my-4" disabled>
+        <button
+          className="bg-primary text-primary-foreground hover:bg-primary/90 inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 my-4"
+          disabled
+        >
           Sending...
-        </Button>
+        </button>
       ) : (
-        <Button type="submit" className="my-4">
+        <button
+          type="submit"
+          className="bg-primary text-primary-foreground hover:bg-primary/90 inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 my-4"
+        >
           Send
-        </Button>
+        </button>
       )}
     </form>
   );

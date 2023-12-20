@@ -15,7 +15,14 @@ const page = async () => {
   return (
     <>
       <Share userId={userId} />
-      <h1 className="md:text-5xl text-3xl mt-7 mb-3">Your Inbox !💌</h1>
+      <h1 className="md:text-5xl text-3xl mt-8 mb-3 tracking-tighter font-bold ">
+        <span className="bg-gradient-to-br from-zinc-600 to-zinc-950 text-transparent bg-clip-text">Your </span>
+        <span className="tracking-normal bg-gradient-to-br from-purple-400 via-purple-600 to-purple-800 text-transparent bg-clip-text">
+          INBOX
+        </span>{" "}
+        ! 💌
+      </h1>
+      <p className="font-semibold text-lg text-muted-foreground px-2">Ryzz meter : {allMessages.length} 🔥</p>
       <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-2 max-w-6xl">
         {allMessages.map((message) => (
           <Cards
@@ -28,7 +35,7 @@ const page = async () => {
           />
         ))}
         {allMessages.length === 0 && (
-          <div className="text-center col-span-full">
+          <div className="text-center col-span-full p-2 mt-16 md:text-lg text-muted-foreground">
             No Messages found. Share Link above and start getting messages!!
           </div>
         )}
