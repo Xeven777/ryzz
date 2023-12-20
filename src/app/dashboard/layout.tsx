@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 
 export default function LayoutNotes({
@@ -9,6 +10,7 @@ export default function LayoutNotes({
     <>
       <Navbar />
       <main className="p-4 max-w-6xl m-auto mb-14">{children}</main>
+      <Footer />
     </>
   );
 }

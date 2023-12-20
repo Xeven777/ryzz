@@ -1,4 +1,5 @@
 import Form from "@/components/Form";
+import { VenetianMask } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 
@@ -24,6 +25,10 @@ const SendMessages = ({ params: { id } }: Props) => {
         >
           Lets Goo!
         </Link>
+      </div>
+
+      <div>
+      <VenetianMask />
       </div>
     </div>
   );
