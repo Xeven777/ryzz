@@ -10,11 +10,11 @@ const SendMessages = ({ params: { id } }: Props) => {
   return (
     <div className="flex flex-col items-center justify-center py-24 px-4 gap-3">
       <h2 className="text-2xl md:text-5xl font-bold">Ryzz</h2>
-      <p className="text-purple-200/70">Send Anonymous messages here </p>
+      <p className="text-muted-foreground">Send Anonymous messages here </p>
       <Form userId={id} />
 
       <div className="flex flex-col mt-20 text-center">
-        <h1>What are You waiting for? Start getting anonymous messages!</h1>
+        <h1>What are You waiting for? Start getting anonymous messages now!</h1>
         <Link
           href="/"
           target="__blank"

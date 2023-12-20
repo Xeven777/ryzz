@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { dark } from "@clerk/themes";
+import { Toaster } from "@/components/ui/toaster";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -24,6 +25,7 @@ export default function RootLayout({
     >
       <html lang="en">
         <body className={inter.className}>{children}</body>
+        <Toaster />
       </html>
     </ClerkProvider>
   );

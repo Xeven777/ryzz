@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useToast } from "@/components/ui/use-toast";
 import { Button } from "../components/ui/button";
 import { Textarea } from "../components/ui/textarea";
 
@@ -9,24 +10,35 @@ interface Props {
 }
 
 const Form = ({ userId }: Props) => {
+  const { toast } = useToast();
   const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
   const handleSubmit = async (event: React.FormEvent) => {
-    console.log("handleSubmit");
+    setLoading(true);
     const content = message;
-    console.log("message", content);
     event.preventDefault();
-    if (!content) {
-      alert("Please enter a message");
-    } else {
-      await fetch("/api/messages", {
-        method: "POST",
-        body: JSON.stringify({ content, userId }),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+    try {
+      if (!content) {
+        alert("Please enter a message");
+      } else {
+        await fetch("/api/messages", {
+          method: "POST",
+          body: JSON.stringify({ content, userId }),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+        setMessage("");
+        toast({
+          title: "Message is send successfully 💌 and anonymously!",
+          description: "Create your account to get your messages!🔥🤩",
+        });
+      }
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoading(false);
       setMessage("");
-      console.log("message is send ", content);
     }
   };
 
@@ -38,9 +50,16 @@ const Form = ({ userId }: Props) => {
         className="min-w-[220px] w-5/12"
         onChange={(e) => setMessage(e.target.value)}
       />
-      <Button type="submit" className="my-4">
-        Send
-      </Button>
+
+      {loading ? (
+        <Button className="my-4" disabled>
+          Sending...
+        </Button>
+      ) : (
+        <Button type="submit" className="my-4">
+          Send
+        </Button>
+      )}
     </form>
   );
 };

@@ -16,9 +16,9 @@ interface Props {
 }
 
 const Cards = ({ message, sentAt, messageId }: Props) => {
-  const handleDelete = async () => {
-    await prisma.message.delete({ where: { id: messageId } });
-  };
+  async function handleDelete() {
+   
+  }
 
   return (
     <Card className="border-primary/30 hover:-translate-y-1 transition-all duration-300 ">
@@ -27,7 +27,7 @@ const Cards = ({ message, sentAt, messageId }: Props) => {
       </CardContent>
       <CardFooter className="flex justify-between">
         <CardDescription>{sentAt}</CardDescription>
-        <button title="delete" type="button" onClick={handleDelete}>
+        <button title="delete" type="button" onClick={handleDelete()} className="bg-zinc-100 rounded-full p-1">
           <TrashIcon className="cursor-pointer" size={20} color="red" />
         </button>
       </CardFooter>

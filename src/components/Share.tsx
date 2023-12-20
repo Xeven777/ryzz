@@ -12,16 +12,11 @@ interface Props {
 const Share = ({ userId }: Props) => {
   const { toast } = useToast();
 
-  // const goToAM = () => {
-  //   console.log("go to am");
-  //   router.push(`/send/${userId}`);
-  // };
   const link = `${window.location.origin}/send/${userId}`;
   const copyLink = () => {
     navigator.clipboard
       .writeText(link)
       .then(() => {
-        console.log("Link copied to clipboard");
         toast({
           title: "Link is copied 🔗 ",
           description: "Share to your Friends and Start getting Messages!🔥🤩",
