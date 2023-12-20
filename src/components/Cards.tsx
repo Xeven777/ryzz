@@ -1,25 +1,35 @@
+"use client";
+
 import {
   Card,
   CardContent,
   CardDescription,
   CardFooter,
-  CardHeader,
-  CardTitle,
 } from "@/components/ui/card";
+import prisma from "@/lib/db/prisma";
+import { TrashIcon } from "lucide-react";
 
 interface Props {
   message: string;
+  messageId: string;
   sentAt: string;
 }
 
-const Cards = ({ message, sentAt }: Props) => {
+const Cards = ({ message, sentAt, messageId }: Props) => {
+  const handleDelete = async () => {
+    await prisma.message.delete({ where: { id: messageId } });
+  };
+
   return (
-    <Card className="border-primary/30 hover:-translate-y-1 transition-all duration-300">
+    <Card className="border-primary/30 hover:-translate-y-1 transition-all duration-300 ">
       <CardContent>
         <p className="pt-3">{message}</p>
       </CardContent>
-      <CardFooter>
+      <CardFooter className="flex justify-between">
         <CardDescription>{sentAt}</CardDescription>
+        <button title="delete" type="button" onClick={handleDelete}>
+          <TrashIcon className="cursor-pointer" size={20} color="red" />
+        </button>
       </CardFooter>
     </Card>
   );

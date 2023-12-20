@@ -6,17 +6,19 @@ export default function Navbar() {
   return (
     <>
       <div className="p-0 shadow border-b-2 justify-center items-center sticky top-0 z-10 min-w-full bg-inherit">
-        <div className="max-w-7xl m-auto flex flex-wrap gap-4 justify-between lg:px-8 p-4 ">
-          <div className="flex flex-row gap-8 items-center ">
+        <div className="max-w-6xl m-auto flex flex-wrap justify-between lg:px-2 py-3 ">
+          <div>
             <Link
               href="/dashboard"
               className="flex items-center justify-center gap-2"
             >
-              <h1 className="text-3xl font-bold">RYZZ</h1>
+              <h1 className="text-3xl font-bold logo bg-clip-text text-transparent bg-gradient-to-tl from-violet-600 via-purple-700 to-fuchsia-400">
+                RYZZ
+              </h1>
             </Link>
           </div>
 
-          <div className="flex items-center md:gap-4 gap-2 ">
+          <div >
             <UserButton
               afterSignOutUrl="/"
               appearance={{

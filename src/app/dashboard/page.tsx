@@ -16,12 +16,15 @@ const page = async () => {
     <>
       <Share userId={userId} />
       <h1 className="md:text-5xl text-3xl mt-7 mb-3">Your Inbox !💌</h1>
-      <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-2">
+      <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-2 max-w-6xl">
         {allMessages.map((message) => (
           <Cards
             key={message.id}
+            messageId={message.id}
             message={message.content}
-            sentAt={message.createdAt.toLocaleString('en-US', { timeZone: 'Asia/Kolkata' })}
+            sentAt={message.createdAt.toLocaleString("en-US", {
+              timeZone: "Asia/Kolkata",
+            })}
           />
         ))}
         {allMessages.length === 0 && (

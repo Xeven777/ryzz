@@ -9,7 +9,7 @@ export default function LayoutNotes({
   return (
     <>
       <Navbar />
-      <main className="p-4 max-w-7xl m-auto mb-14">{children}</main>
+      <main className="p-4 max-w-6xl m-auto mb-14">{children}</main>
       <Toaster />
     </>
   );
