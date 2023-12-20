@@ -4,6 +4,7 @@ import React from "react";
 import { useToast } from "@/components/ui/use-toast";
 import Link from "next/link";
 import { Copy } from "lucide-react";
+import Wap from "./Wap";
 
 interface Props {
   userId: string;
@@ -46,6 +47,7 @@ const Share = ({ userId }: Props) => {
         >
           Copy Link <Copy size={16} className="ml-2" />
         </button>
+        <Wap linkprop={link}/>
       </div>
     </>
   );
