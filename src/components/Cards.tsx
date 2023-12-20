@@ -53,7 +53,7 @@ const Cards = ({ message, sentAt, messageId }: Props) => {
             type="button"
             onClick={handleDelete}
             disabled
-            className="bg-blue-500 rounded-full p-1"
+            className="bg-fuchsia-600 text-white rounded-full p-1"
           >
             <Loader2 className="animate-spin cursor-wait" size={20} />
           </button>
