@@ -43,10 +43,13 @@
   text-shadow: 0 0 15px hsl(var(--primary-foreground));
 }
 
-.mont{
+.mont {
   font-family: "Montserrat", sans-serif;
 }
-body {
+p,
+a,
+button,
+.div {
   font-family: "Lato", sans-serif;
 }
 .logo {
@@ -64,5 +67,4 @@ body {
   body {
     @apply bg-background text-foreground min-h-screen;
   }
-
 }
