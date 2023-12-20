@@ -9,7 +9,7 @@ type Props = {
 const SendMessages = ({ params: { id } }: Props) => {
   return (
     <div className="text-white flex min-h-screen flex-col items-center justify-center py-24 px-4 gap-3 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-cyan-400 via-blue-500 to-purple-600 text-center">
-      <h2 className="text-4xl md:text-6xl font-bold logo ryzz">Ryzz</h2>
+      <h2 className="text-4xl md:text-6xl font-bold className__myfont_fc33664f__b6a01139 ryzz">Ryzz</h2>
       <p className="text-white/90 px-2">Send anonymous messages here </p>
       <Form userId={id} />
 

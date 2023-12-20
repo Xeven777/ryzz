@@ -29,8 +29,9 @@ export const metadata: Metadata = {
 };
 
 const myFont = localFont({
-  src: "./assets/Beatiful Vibes.ttf",
+  src: "./assets/BeatifulVibes.ttf",
   display: "swap",
+  variable: "--font-vibes",
 });
 
 export default function RootLayout({

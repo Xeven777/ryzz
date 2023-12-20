@@ -5,7 +5,7 @@
 
 @font-face {
   font-family: "script";
-  src: url("./assets/Beatiful\ Vibes.ttf");
+  src: url("/BeatifulVibes.ttf");
 }
 
 @layer base {
@@ -67,4 +67,5 @@ body {
   body {
     @apply bg-background text-foreground min-h-screen;
   }
+
 }
