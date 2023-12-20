@@ -26,7 +26,7 @@ const page = async () => {
         ! 💌
       </h1>
 
-      <p className="font-semibold text-lg text-muted-foreground">
+      <p className="font-semibold text-lg text-muted-foreground px-1">
         Ryzz meter : {allMessages.length} 🔥
       </p>
 

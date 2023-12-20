@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Toaster } from "@/components/ui/toaster";
 import { ClerkProvider } from "@clerk/nextjs";
-import localFont from 'next/font/local'
+import localFont from "next/font/local";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -28,7 +28,10 @@ export const metadata: Metadata = {
   },
 };
 
-
+const myFont = localFont({
+  src: "./assets/Beatiful Vibes.ttf",
+  display: "swap",
+});
 
 export default function RootLayout({
   children,
@@ -41,7 +44,7 @@ export default function RootLayout({
         variables: { colorPrimary: "#6C47FF" },
       }}
     >
-      <html lang="en">
+      <html lang="en" className={myFont.className}>
         <body>{children}</body>
         <Toaster />
       </html>
