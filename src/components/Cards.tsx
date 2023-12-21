@@ -40,7 +40,7 @@ const Cards = ({ message, sentAt, messageId }: Props) => {
     return null;
   }
   return (
-    <Card className="border-primary/30 hover:-translate-y-1 transition-all duration-300 ">
+    <Card className="border-primary/30 hover:-translate-y-1 hover:shadow-md transition-all duration-300 ">
       <CardContent>
         <p className="pt-3">{message}</p>
       </CardContent>

@@ -10,7 +10,7 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-start py-20 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-cyan-400 via-blue-500 to-purple-600 ">
-      <h1 className="__className_938c5f logo ryzz text-white text-6xl md:text-8xl text-center font-extrabold mx-auto mb-5">
+      <h1 className="__className_938c5f p-2 logo ryzz text-white text-6xl md:text-8xl text-center font-extrabold mx-auto mb-5">
         Ryzz
       </h1>
       <p className="text-center text-zinc-200 font-medium mont px-3 md:text-xl">

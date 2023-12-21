@@ -7,6 +7,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Ryzz",
   description: "Send Anonymous Messages to your Friends!",
+  metadataBase:new URL('https://ryzz.vercel.app'),
   openGraph: {
     type: "website",
     locale: "en_US",

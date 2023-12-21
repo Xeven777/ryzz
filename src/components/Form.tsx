@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useToast } from "@/components/ui/use-toast";
 import { Textarea } from "../components/ui/textarea";
+import { Loader, SendIcon } from "lucide-react";
 
 interface Props {
   userId: string;
@@ -29,7 +30,7 @@ const Form = ({ userId }: Props) => {
         });
         setMessage("");
         toast({
-          title: "Message is send successfully 💌 and anonymously!",
+          title: "Message is sent successfully 💌 and anonymously!",
           description: "Create your account to get your messages!🔥🤩",
         });
       }
@@ -46,7 +47,7 @@ const Form = ({ userId }: Props) => {
       <Textarea
         placeholder="Show your Ryzz 🤪"
         value={message}
-        className="min-w-[220px] lato mx-2 w-full sm:w-5/12 bg-zinc-200/50 text-slate-700 font-semibold text-base"
+        className="min-w-[220px] lato mx-2 w-full sm:w-5/12 bg-zinc-200/50 text-slate-800 font-semibold text-base"
         onChange={(e) => setMessage(e.target.value)}
       />
 
@@ -55,14 +56,14 @@ const Form = ({ userId }: Props) => {
           className="bg-primary text-primary-foreground hover:bg-primary/90 inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 my-4"
           disabled
         >
-          Sending...
+          Sending... <Loader color="white" size={15} />  
         </button>
       ) : (
         <button
           type="submit"
           className="bg-primary text-primary-foreground hover:bg-primary/90 inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 my-4"
         >
-          Send
+          Send <SendIcon color="white" size={15} />
         </button>
       )}
     </form>
