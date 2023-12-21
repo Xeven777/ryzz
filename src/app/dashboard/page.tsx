@@ -11,7 +11,12 @@ const page = async () => {
     return;
   }
 
-  const allMessages = await prisma.message.findMany({ where: { userId } });
+  const allMessages = await prisma.message.findMany({
+    where: { userId },
+    orderBy: {
+      createdAt: "desc",
+    },
+  });
 
   return (
     <>

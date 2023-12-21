@@ -1,4 +1,4 @@
-import { Mail, Smile } from "lucide-react";
+import { Home, Mail, Smile } from "lucide-react";
 import Link from "next/link";
 
 const page = () => {
@@ -11,7 +11,7 @@ const page = () => {
           Ryzz
         </span>
       </h1>
-      <div className="max-w-prose mt-4 rounded-md bg-gradient-to-br from-cyan-500 via-purple-600 to-purple-700 text-white p-4 md:p-6">
+      <div className="max-w-prose w-full mt-4 rounded-md bg-gradient-to-br from-cyan-500 via-purple-600 to-purple-700 text-white p-4 md:p-6">
         <h2 className="text-lg ryzz font-semibold mont md:text-3xl">
           Our Promise 💫
         </h2>
@@ -28,7 +28,7 @@ const page = () => {
           <br />
         </p>
       </div>
-      <div className="max-w-prose mt-4 rounded-md bg-gradient-to-tr from-blue-700 via-blue-800 to-gray-800 text-white p-4 md:p-6">
+      <div className="max-w-prose w-full mt-4 rounded-md bg-gradient-to-tr from-blue-700 via-blue-800 to-gray-800 text-white p-4 md:p-6">
         <h2 className="text-lg ryzz font-semibold mont md:text-3xl">
           How its made ? ⚡
         </h2>
@@ -46,7 +46,7 @@ const page = () => {
           <br />
         </p>
       </div>
-      <div className="sm:min-w-[65ch] mt-4 rounded-md bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900 text-white p-4 md:p-6">
+      <div className="max-w-prose w-full mt-4 rounded-md bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900 text-white p-4 md:p-6">
         <h2 className="text-lg ryzz font-semibold mont md:text-3xl">
           But, who made it ? 🤨
         </h2>
@@ -55,7 +55,7 @@ const page = () => {
           <br />
         </p>
       </div>
-      <div className="max-w-prose mt-4 rounded-md bg-gradient-to-br from-fuchsia-500 via-red-600 to-orange-400 text-white p-4 md:p-6">
+      <div className="max-w-prose w-full mt-4 rounded-md bg-gradient-to-br from-fuchsia-500 via-red-600 to-orange-400 text-white p-4 md:p-6">
         <h2 className="text-lg ryzz font-semibold mont md:text-3xl">
           Wanna Contact ? 📧
         </h2>
@@ -71,6 +71,15 @@ const page = () => {
             <Mail size={17} color="black" />
           </Link>
         </p>
+      </div>
+      <div className="mt-6">
+        Back Home :{" "}
+        <Link
+          href="/"
+          className="bg-blue-600 text-white p-2 rounded-sm active:scale-95"
+        >
+          Home <Home size={16} className="inline-flex" />
+        </Link>
       </div>
     </div>
   );

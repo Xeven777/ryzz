@@ -37,17 +37,17 @@ const Share = ({ userId }: Props) => {
       <div className="flex flex-row items-center gap-2 md:gap-6 flex-wrap">
         <Link
           href={`/send/${userId}`}
-          className="py-1 px-4 border border-primary rounded text-purple-900 hover:text-purple-600 transition duration-300 ease-in-out max-w-2xl truncate"
+          className="py-1 px-3 border border-primary rounded-md text-purple-900 hover:text-purple-600 transition duration-300 ease-in-out max-w-2xl truncate"
         >
           {link}
         </Link>
         <button
           onClick={copyLink}
-          className="max-w max-w-min bg-primary text-primary-foreground hover:bg-primary/90 inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 font-medium"
+          className="max-w max-w-min bg-primary text-primary-foreground hover:bg-primary/90 inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 font-medium active:scale-95 transition-all"
         >
           Copy Link <Copy size={16} className="ml-2" />
         </button>
-        <Wap linkprop={link}/>
+        <Wap linkprop={link} />
       </div>
     </>
   );

@@ -9,8 +9,8 @@ type Props = {
 
 const SendMessages = ({ params: { id } }: Props) => {
   return (
-    <div className="text-white flex min-h-screen flex-col items-center justify-center py-24 px-4 gap-3 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-cyan-400 via-blue-500 to-purple-600 text-center relative">
-      <h2 className="text-5xl md:text-7xl font-bold __className_938c5f p-2 ryzz logo">
+    <div className="text-white flex min-h-screen flex-col items-center justify-center pt-20 pb-4 px-4 gap-3 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-cyan-400 via-blue-500 to-purple-600 text-center relative">
+      <h2 className="text-6xl md:text-8xl font-bold __className_938c5f p-2 ryzz logo">
         Ryzz
       </h2>
       <p className="text-white/90 px-2 mont">Send anonymous messages here 💌</p>
@@ -32,7 +32,7 @@ const SendMessages = ({ params: { id } }: Props) => {
       <Link
         href="/about"
         title="About Ryzz"
-        className="absolute bg-purple-800/80 bottom-2 right-1 p-2 rounded-full cursor-pointer"
+        className="absolute bg-purple-700/60 bottom-2 right-1 p-2 rounded-full cursor-pointer"
       >
         <VenetianMask color="white" size={28} />
       </Link>
