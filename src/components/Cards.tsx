@@ -17,6 +17,7 @@ interface Props {
 
 const Cards = ({ message, sentAt, messageId }: Props) => {
   const [loading, setLoading] = useState(false);
+  const [seen, setSeen] = useState(false);
   const [deleted, setDeleted] = useState(false);
   async function handleDelete() {
     setLoading(true);
@@ -39,14 +40,13 @@ const Cards = ({ message, sentAt, messageId }: Props) => {
   if (deleted) {
     return null;
   }
-  return (
+  return seen ? (
     <Card className="border-primary/30 hover:-translate-y-1 hover:shadow-md transition-all duration-300 ">
       <CardContent>
-        <p className="pt-3">{message}</p>
+        <p className="pt-3 line-clamp-1">{message}</p>
       </CardContent>
       <CardFooter className="flex justify-between">
         <CardDescription>{sentAt}</CardDescription>
-
         {loading ? (
           <button
             title="delete"
@@ -68,6 +68,18 @@ const Cards = ({ message, sentAt, messageId }: Props) => {
           </button>
         )}
       </CardFooter>
+    </Card>
+  ) : (
+    <Card
+      className="hover:-translate-y-1 hover:shadow-md transition-all duration-300 min-h-[150px] bg-gradient-to-tl from-cyan-300 via-blue-500 to-purple-600 flex flex-col items-center justify-center"
+      onClick={() => {
+        setSeen(true);
+      }}
+    >
+      <h2 className="logo p-1 md:text-5xl text-4xl text-white  ryzz __className_938c5f">
+        Ryzz
+      </h2>
+      <p className="text-zinc-300">Click to reveal</p>
     </Card>
   );
 };
