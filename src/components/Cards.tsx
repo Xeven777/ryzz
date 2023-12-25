@@ -98,7 +98,7 @@ const Cards = ({ message, sentAt, messageId, seen }: Props) => {
           </CardFooter>
         </Card>
       </DialogTrigger>
-      <DialogContent className="px-0 md:p-6">
+      <DialogContent className="px-2 md:p-6">
         <Message message={message} />
       </DialogContent>
     </Dialog>

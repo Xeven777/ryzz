@@ -79,3 +79,24 @@ button,
     @apply bg-background text-foreground min-h-screen;
   }
 }
+
+.animate-shake {
+  animation: animate-shake 2.2s ease-in-out infinite;
+}
+
+@keyframes animate-shake {
+  0%,
+  10%,
+  65%,
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+  30%,
+  40% {
+    transform: rotate(-1deg) scale(1.15);
+  }
+  35%,
+  45% {
+    transform: rotate(1deg) scale(1.15);
+  }
+}
