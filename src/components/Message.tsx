@@ -59,14 +59,14 @@ const Message = ({ message }: Props) => {
           alt="🎨"
           width={25}
           onClick={changeGradient}
-          className="active:scale-95  active:rotate-12 cursor-pointer"
+          className="active:scale-95 select-none active:rotate-12 cursor-pointer"
         />
         <Image
           src={camera}
           alt="📸"
           width={30}
           onClick={clickImage}
-          className="active:scale-95 cursor-pointer"
+          className="active:scale-95 select-none cursor-pointer"
         />
       </div>
     </div>

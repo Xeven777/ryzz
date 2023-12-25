@@ -84,7 +84,7 @@ const Cards = ({ message, sentAt, messageId, seen }: Props) => {
               type="button"
               onClick={handleDelete}
               disabled
-              className="bg-fuchsia-600 text-white rounded-full p-1"
+              className="bg-fuchsia-600 text-white rounded-full p-1 select-none"
             >
               <Loader2 className="animate-spin cursor-wait" size={20} />
             </button>
@@ -95,7 +95,7 @@ const Cards = ({ message, sentAt, messageId, seen }: Props) => {
               onClick={handleDelete}
               className="bg-zinc-100 rounded-full p-1"
             >
-              <TrashIcon className="cursor-pointer" size={20} color="red" />
+              <TrashIcon className="cursor-pointer select-none" size={20} color="red" />
             </button>
           )}
         </CardFooter>
