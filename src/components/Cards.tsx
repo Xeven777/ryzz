@@ -13,11 +13,12 @@ interface Props {
   message: string;
   messageId: string;
   sentAt: string;
+  seen: boolean;
 }
 
-const Cards = ({ message, sentAt, messageId }: Props) => {
+const Cards = ({ message, sentAt, messageId, seen }: Props) => {
   const [loading, setLoading] = useState(false);
-  const [seen, setSeen] = useState(false);
+  const [isSeen, setIsSeen] = useState(seen);
   const [deleted, setDeleted] = useState(false);
   async function handleDelete() {
     setLoading(true);
@@ -37,13 +38,29 @@ const Cards = ({ message, sentAt, messageId }: Props) => {
       setLoading(false);
     }
   }
+
+  async function handleSeen() {
+    try {
+      await fetch("api/messages", {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ id: messageId }),
+      });
+      setIsSeen(true);
+    } catch (error) {
+      console.log(error);
+      alert("Something went wrong");
+    }
+  }
   if (deleted) {
     return null;
   }
-  return seen ? (
+  return isSeen ? (
     <Card className="border-primary/30 hover:-translate-y-1 hover:shadow-md transition-all duration-300 ">
       <CardContent>
-        <p className="pt-3 line-clamp-1">{message}</p>
+        <p className="pt-4 line-clamp-1">{message}</p>
       </CardContent>
       <CardFooter className="flex justify-between">
         <CardDescription>{sentAt}</CardDescription>
@@ -71,10 +88,8 @@ const Cards = ({ message, sentAt, messageId }: Props) => {
     </Card>
   ) : (
     <Card
-      className="hover:-translate-y-1 hover:shadow-md transition-all duration-300 min-h-[150px] bg-gradient-to-tl from-cyan-300 via-blue-500 to-purple-600 flex flex-col items-center justify-center"
-      onClick={() => {
-        setSeen(true);
-      }}
+      className="hover:-translate-y-1 hover:shadow-md transition-all duration-300 min-h-[140px] bg-gradient-to-tl from-cyan-300 via-blue-500 to-purple-600 flex flex-col items-center justify-center cursor-pointer"
+      onClick={handleSeen}
     >
       <h2 className="logo p-1 md:text-5xl text-4xl text-white  ryzz __className_938c5f">
         Ryzz

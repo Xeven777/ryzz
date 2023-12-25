@@ -42,6 +42,7 @@ const page = async () => {
           <Cards
             key={message.id}
             messageId={message.id}
+            seen={message.seen}
             message={message.content}
             sentAt={message.createdAt.toLocaleString("en-US", {
               timeZone: "Asia/Kolkata",

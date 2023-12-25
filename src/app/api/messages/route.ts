@@ -28,10 +28,31 @@ export async function POST(req: Request) {
 
 export async function DELETE(req: Request) {
   try {
-    const {id} = await req.json();
+    const { id } = await req.json();
 
     if (id) {
       const message = await prisma.message.delete({ where: { id } });
+
+      return new NextResponse(JSON.stringify({ message }), { status: 200 });
+    }
+  } catch (error) {
+    console.log(error);
+    return new NextResponse(
+      JSON.stringify({ error: "Internal server error" }),
+      { status: 500 }
+    );
+  }
+}
+
+export async function PATCH(req: Request) {
+  try {
+    const { id } = await req.json();
+
+    if (id) {
+      const message = await prisma.message.update({
+        where: { id },
+        data: { seen: true },
+      });
 
       return new NextResponse(JSON.stringify({ message }), { status: 200 });
     }
