@@ -50,6 +50,7 @@ const Cards = ({ message, sentAt, messageId, seen }: Props) => {
 
   async function handleSeen() {
     try {
+      setIsSeen(true);
       await fetch("api/messages", {
         method: "PATCH",
         headers: {
@@ -57,7 +58,6 @@ const Cards = ({ message, sentAt, messageId, seen }: Props) => {
         },
         body: JSON.stringify({ id: messageId }),
       });
-      setIsSeen(true);
     } catch (error) {
       console.log(error);
       alert("Something went wrong");
@@ -104,13 +104,13 @@ const Cards = ({ message, sentAt, messageId, seen }: Props) => {
     </Dialog>
   ) : (
     <Card
-      className="hover:-translate-y-1 hover:shadow-md transition-all duration-300 min-h-[140px] bg-gradient-to-tl from-cyan-300 via-blue-500 to-purple-600 flex flex-col items-center justify-center cursor-pointer"
+      className="hover:-translate-y-1 hover:shadow-md transition-all duration-300 min-h-[130px] bg-gradient-to-tl from-cyan-300 via-blue-500 to-purple-600 flex flex-col items-center justify-center cursor-pointer"
       onClick={handleSeen}
     >
       <h2 className="logo p-1 md:text-5xl text-4xl text-white  ryzz __className_938c5f">
         Ryzz
       </h2>
-      <p className="text-zinc-300">Click to reveal</p>
+      <p className="text-zinc-100/70">Click to reveal</p>
     </Card>
   );
 };

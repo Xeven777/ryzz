@@ -23,7 +23,7 @@ export const gradients = [
   "bg-gradient-to-r from-fuchsia-500 via-red-600 to-orange-400",
   "bg-gradient-to-r from-emerald-500 to-lime-600",
   "bg-[conic-gradient(at_left,_var(--tw-gradient-stops))] from-yellow-500 via-purple-500 to-blue-500",
-  "bg-gradient-to-t from-orange-400 to-sky-400",
+  "bg-gradient-to-tl from-slate-700 to-sky-600",
   "bg-gradient-to-r from-fuchsia-400 to-violet-500",
   "bg-gradient-to-r from-lime-500 to-emerald-500",
   "bg-gradient-to-r from-purple-500 to-rose-500",
