@@ -3,7 +3,8 @@
 import { useState } from "react";
 import { useToast } from "@/components/ui/use-toast";
 import { Textarea } from "../components/ui/textarea";
-import { Loader, SendIcon } from "lucide-react";
+import { Dices, Loader, SendIcon } from "lucide-react";
+import { prompts } from "@/lib/data";
 
 interface Props {
   userId: string;
@@ -19,7 +20,10 @@ const Form = ({ userId }: Props) => {
     event.preventDefault();
     try {
       if (!content) {
-        alert("Please enter a message");
+        toast({
+          title: "Oopsie😕,the Message is blank...",
+          description: "Type in something and send again!🔥🤩",
+        });
       } else {
         await fetch("/api/messages", {
           method: "POST",
@@ -42,26 +46,39 @@ const Form = ({ userId }: Props) => {
     }
   };
 
+  function getRandom() {
+    const randomIndex = Math.floor(Math.random() * prompts.length);
+    setMessage(prompts[randomIndex]);
+  }
+
   return (
     <form onSubmit={handleSubmit} className="flex flex-col items-center w-full">
-      <Textarea
-        placeholder="Show your Ryzz 🤪"
-        value={message}
-        className="min-w-[220px] lato mx-2 w-full sm:w-5/12 bg-zinc-200/50 text-slate-800 font-semibold text-base"
-        onChange={(e) => setMessage(e.target.value)}
-      />
+      <div className="relative w-full sm:w-5/12 min-w-[220px]">
+        <Textarea
+          placeholder="Show your Ryzz 🤪"
+          value={message}
+          className="w-full rounded-b-2xl min-h-[120px] rounded-t-none lato bg-zinc-200/50 text-slate-800 font-semibold text-base"
+          onChange={(e) => setMessage(e.target.value)}
+        />
+        <div
+          className="absolute bottom-1 right-1 md:bottom-2 md:right-2 p-1 bg-zinc-200 rounded-full transition-all active:scale-95 hover:scale-105 active:rotate-12"
+          onClick={getRandom}
+        >
+          <Dices className="text-zinc-600" />
+        </div>
+      </div>
 
       {loading ? (
         <button
-          className="bg-primary text-primary-foreground hover:bg-primary/90 inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 my-4"
+          className="bg-primary text-primary-foreground hover:bg-primary/90 inline-flex items-center justify-center whitespace-nowrap rounded-md text-lg font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 my-4"
           disabled
         >
-          Sending... <Loader color="white" size={15} />  
+          Sending... <Loader color="white" size={15} />
         </button>
       ) : (
         <button
           type="submit"
-          className="bg-primary text-primary-foreground hover:bg-primary/90 inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 my-4"
+          className="bg-primary text-primary-foreground hover:bg-primary/90 inline-flex items-center justify-center whitespace-nowrap rounded-md text-lg font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 my-4 active:scale-95"
         >
           Send <SendIcon color="white" size={15} />
         </button>
