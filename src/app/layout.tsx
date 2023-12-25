@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     url: "https://ryzz.vercel.app",
     images: [
       {
-        url: "https://i.imgur.com/22Bvx0El.png",
+        url: "https://i.imgur.com/Zbyeza8l.png",
         width: 1200,
         height: 630,
         alt: "Ryzz",
