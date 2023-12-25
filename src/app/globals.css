@@ -49,7 +49,8 @@
 p,
 a,
 button,
-.div,.lato {
+.div,
+.lato {
   font-family: "Lato", sans-serif;
 }
 .logo {
@@ -59,7 +60,17 @@ button,
 .ryzz {
   text-shadow: 0 0 20px #ffffffb9;
 }
+::-webkit-scrollbar-track {
+  @apply bg-muted;
+}
 
+::-webkit-scrollbar-thumb {
+  @apply bg-primary;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-purple-400;
+}
 @layer base {
   * {
     @apply border-border;

@@ -31,7 +31,7 @@ const Share = ({ userId }: Props) => {
 
   return (
     <>
-      <h1 className="text-xl md:text-3xl font-bold mt-5 mb-3 tracking-tight text-zinc-800 mont">
+      <h1 className="text-xl md:text-3xl font-bold mt-3 md:mt-5 mb-3 tracking-tight text-zinc-800 mont">
         Share your Link
       </h1>
       <div className="flex flex-row items-center gap-2 md:gap-6 flex-wrap">
