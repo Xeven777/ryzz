@@ -6,8 +6,17 @@ import {
   CardDescription,
   CardFooter,
 } from "@/components/ui/card";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import { Loader2, TrashIcon } from "lucide-react";
 import { useState } from "react";
+import Message from "./Message";
 
 interface Props {
   message: string;
@@ -58,34 +67,41 @@ const Cards = ({ message, sentAt, messageId, seen }: Props) => {
     return null;
   }
   return isSeen ? (
-    <Card className="border-primary/30 hover:-translate-y-1 hover:shadow-md transition-all duration-300 ">
-      <CardContent>
-        <p className="pt-4 line-clamp-1">{message}</p>
-      </CardContent>
-      <CardFooter className="flex justify-between">
-        <CardDescription>{sentAt}</CardDescription>
-        {loading ? (
-          <button
-            title="delete"
-            type="button"
-            onClick={handleDelete}
-            disabled
-            className="bg-fuchsia-600 text-white rounded-full p-1"
-          >
-            <Loader2 className="animate-spin cursor-wait" size={20} />
-          </button>
-        ) : (
-          <button
-            title="delete"
-            type="button"
-            onClick={handleDelete}
-            className="bg-zinc-100 rounded-full p-1"
-          >
-            <TrashIcon className="cursor-pointer" size={20} color="red" />
-          </button>
-        )}
-      </CardFooter>
-    </Card>
+    <Dialog>
+      <DialogTrigger asChild>
+        <Card className="border-primary/30 hover:-translate-y-1 hover:shadow-md transition-all duration-300 ">
+          <CardContent>
+            <p className="pt-4 line-clamp-1">{message}</p>
+          </CardContent>
+          <CardFooter className="flex justify-between">
+            <CardDescription>{sentAt}</CardDescription>
+            {loading ? (
+              <button
+                title="delete"
+                type="button"
+                onClick={handleDelete}
+                disabled
+                className="bg-fuchsia-600 text-white rounded-full p-1"
+              >
+                <Loader2 className="animate-spin cursor-wait" size={20} />
+              </button>
+            ) : (
+              <button
+                title="delete"
+                type="button"
+                onClick={handleDelete}
+                className="bg-zinc-100 rounded-full p-1"
+              >
+                <TrashIcon className="cursor-pointer" size={20} color="red" />
+              </button>
+            )}
+          </CardFooter>
+        </Card>
+      </DialogTrigger>
+      <DialogContent className="px-0 md:p-6">
+        <Message message={message} />
+      </DialogContent>
+    </Dialog>
   ) : (
     <Card
       className="hover:-translate-y-1 hover:shadow-md transition-all duration-300 min-h-[140px] bg-gradient-to-tl from-cyan-300 via-blue-500 to-purple-600 flex flex-col items-center justify-center cursor-pointer"
