@@ -14,6 +14,7 @@ const SendMessages = async ({ params: { id } }: Props) => {
     user.firstName && user.lastName
       ? user.firstName[0] + user.lastName[0]
       : "RZ";
+  const username = user.firstName === null? "RyzzUser" : user.firstName;
   const avImg = user.hasImage
     ? user.imageUrl
     : "https://i.postimg.cc/Kcp57cXf/apple-touch-icon.png";
@@ -29,8 +30,10 @@ const SendMessages = async ({ params: { id } }: Props) => {
           <AvatarFallback>{initials}</AvatarFallback>
         </Avatar>
         <div>
-          <p className="md:text-base text-sm text-zinc-600">@{user.firstName}</p>
-          <p className="font-semibold md:text-lg">Send anonymous messages here 💌</p>
+          <p className="md:text-base text-sm text-zinc-600">@{username}</p>
+          <p className="font-semibold md:text-lg">
+            Send anonymous messages here 💌
+          </p>
         </div>
       </div>
 
