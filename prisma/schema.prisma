@@ -12,6 +12,6 @@ model Message {
   userId    String
   createdAt DateTime @default(now())
   seen      Boolean  @default(false)
-  
+
   @@map("messages")
 }
