@@ -100,3 +100,7 @@ button,
     transform: rotate(1deg) scale(1.15);
   }
 }
+
+img{
+  -webkit-tap-highlight-color: transparent;
+}
