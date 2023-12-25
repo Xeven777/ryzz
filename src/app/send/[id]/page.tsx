@@ -14,6 +14,9 @@ const SendMessages = async ({ params: { id } }: Props) => {
     user.firstName && user.lastName
       ? user.firstName[0] + user.lastName[0]
       : "RZ";
+  const avImg = user.hasImage
+    ? user.imageUrl
+    : "https://i.postimg.cc/Kcp57cXf/apple-touch-icon.png";
 
   return (
     <div className="text-white flex min-h-screen flex-col items-center justify-center pt-16 pb-4 px-4 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-cyan-400 via-blue-500 to-purple-600 text-center relative">
@@ -22,7 +25,7 @@ const SendMessages = async ({ params: { id } }: Props) => {
       </h2>
       <div className="bg-white/90 flex gap-3 px-4 py-3 mont text-zinc-900 mt-3 sm:w-5/12 min-w-[220px] w-full rounded-t-2xl items-center leading-tight text-start">
         <Avatar>
-          <AvatarImage src={user.imageUrl} alt={initials} />
+          <AvatarImage src={avImg} alt={initials} />
           <AvatarFallback>{initials}</AvatarFallback>
         </Avatar>
         <div>
@@ -40,7 +43,7 @@ const SendMessages = async ({ params: { id } }: Props) => {
         <Link
           href="/"
           target="__blank"
-          className="animate-shake py-2 mt-5 mx-auto rounded-md bg-primary text-sm text-primary-foreground w-[110px] text-center "
+          className="animate-shake p-2 px-6 mt-5 mx-auto rounded-md bg-primary text-primary-foreground text-center "
         >
           Lets Goo!🚀
         </Link>
