@@ -56,7 +56,9 @@ button,
 .logo {
   font-family: "script", sans-serif;
 }
-
+.btn{
+  @apply max-w-min text-primary-foreground hover:opacity-90 inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 font-medium active:scale-95 transition-all;
+}
 .ryzz {
   text-shadow: 0 0 20px #ffffffb9;
 }
@@ -101,6 +103,6 @@ button,
   }
 }
 
-img{
+img {
   -webkit-tap-highlight-color: transparent;
 }

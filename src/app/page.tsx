@@ -17,7 +17,7 @@ export default function Home() {
         Create an account and Start the fun! 🔥😍
       </p>
       <Image src={hero} alt="hero" height={300} />
-      <button className="bg-primary text-primary-foreground hover:bg-primary/90 inline-flex items-center justify-center whitespace-nowrap rounded-md text-lg font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 active:scale-95 animate-shake">
+      <button className="bg-primary btn animate-shake">
         <Link href="/dashboard">Start Now ⚡</Link>
       </button>
     </main>
