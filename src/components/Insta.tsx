@@ -18,14 +18,14 @@ import Image from "next/image";
 interface Props {
   linkprop: string;
 }
-const OtherShare = ({ linkprop }: Props) => {
+const Insta = ({ linkprop }: Props) => {
   const { toast } = useToast();
   return (
     <div>
       <Drawer>
         <DrawerTrigger>
           <button className="btn bg-gradient-to-br from-fuchsia-500 via-red-600 to-orange-400">
-            Insta <Instagram size={18} className="ml-2" />
+            Instagram <Instagram size={18} className="ml-2" />
           </button>
         </DrawerTrigger>
 
@@ -114,4 +114,4 @@ const OtherShare = ({ linkprop }: Props) => {
   );
 };
 
-export default OtherShare;
+export default Insta;
