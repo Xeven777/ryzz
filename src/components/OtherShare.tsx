@@ -22,7 +22,7 @@ const OtherShare = ({ linkprop }: Props) => {
   const { toast } = useToast();
   return (
     <div>
-      <Drawer >
+      <Drawer>
         <DrawerTrigger>
           <button className="btn bg-gradient-to-br from-fuchsia-500 via-red-600 to-orange-400">
             Insta <Instagram size={18} className="ml-2" />
@@ -30,10 +30,10 @@ const OtherShare = ({ linkprop }: Props) => {
         </DrawerTrigger>
 
         <DrawerContent className="mont">
-          <DrawerHeader >
+          <DrawerHeader>
             <DrawerTitle className="font-semibold px-3 text-center">
               Steps To Share Ryzz Link to Instagram :
-            </DrawerTitle>p
+            </DrawerTitle>
           </DrawerHeader>
           <div className="lg:max-w-5xl mx-auto lato">
             <ul className="gap-3 flex flex-col px-5">
@@ -41,7 +41,7 @@ const OtherShare = ({ linkprop }: Props) => {
                 1. Download Story Template{" "}
                 <button
                   type="button"
-                  className="rounded-full btn bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-600"
+                  className="btn bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-600"
                   onClick={() => {
                     saveAs(
                       "https://i.imgur.com/jjxy4gj.jpg",
@@ -56,7 +56,7 @@ const OtherShare = ({ linkprop }: Props) => {
                 2. Copy Ryzz Link here :{" "}
                 <button
                   type="button"
-                  className="rounded-full btn bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-600"
+                  className="btn bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-600"
                   onClick={() => {
                     navigator.clipboard.writeText(linkprop);
                     toast({
@@ -78,7 +78,7 @@ const OtherShare = ({ linkprop }: Props) => {
                   src={img1}
                   alt=""
                   width={200}
-                  className="md:max-w-[350px] rounded-2xl w-[250px]"
+                  className="md:max-w-[350px] rounded-2xl w-[230px] h-[50px] object-cover"
                 />
               </li>
               <li className="flex">
@@ -87,7 +87,7 @@ const OtherShare = ({ linkprop }: Props) => {
                   src={img2}
                   alt=""
                   width={200}
-                  className="md:max-w-[350px] rounded-2xl w-[250px] h-[100px] object-cover"
+                  className="md:max-w-[350px] rounded-2xl w-[250px] h-[70px] object-cover object-bottom"
                 />
               </li>
               <li className="flex">
@@ -96,7 +96,7 @@ const OtherShare = ({ linkprop }: Props) => {
                   src={img3}
                   alt=""
                   width={200}
-                  className="md:max-w-[350px] rounded-2xl w-[250px] h-[200px] object-cover"
+                  className="md:max-w-[350px] rounded-2xl w-[240px] h-[160px] object-cover"
                 />
               </li>
             </ul>
