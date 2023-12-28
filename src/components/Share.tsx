@@ -5,6 +5,7 @@ import { useToast } from "@/components/ui/use-toast";
 import Link from "next/link";
 import { Copy } from "lucide-react";
 import Wap from "./Wap";
+import OtherShare from "./OtherShare";
 
 interface Props {
   userId: string;
@@ -43,11 +44,12 @@ const Share = ({ userId }: Props) => {
         </Link>
         <button
           onClick={copyLink}
-          className="max-w max-w-min bg-primary text-primary-foreground hover:bg-primary/90 inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 font-medium active:scale-95 transition-all"
+          className="max-w-min bg-primary text-primary-foreground hover:bg-primary/90 inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 font-medium active:scale-95 transition-all"
         >
           Copy Link <Copy size={16} className="ml-2" />
         </button>
         <Wap linkprop={link} />
+        <OtherShare linkprop={link}/>
       </div>
     </>
   );
