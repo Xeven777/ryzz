@@ -1,5 +1,8 @@
 {
+  "id": "Ryzz",
   "name": "Ryzz",
+  "scope": "/",
+  "start_url": "/",
   "short_name": "Ryzz",
   "icons": [
     {
@@ -13,7 +16,7 @@
       "type": "image/png"
     }
   ],
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff",
+  "theme_color": "#744FEE",
+  "background_color": "#853FEC",
   "display": "standalone"
 }

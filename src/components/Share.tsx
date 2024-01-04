@@ -15,7 +15,6 @@ interface Props {
 
 const Share = ({ userId }: Props) => {
   const { toast } = useToast();
-
   const link = `${window.location.origin}/send/${userId}`;
   const copyLink = () => {
     navigator.clipboard
@@ -51,9 +50,9 @@ const Share = ({ userId }: Props) => {
           Copy Link <Copy size={16} className="ml-2" />
         </button>
         <Wap linkprop={link} />
-        <Insta linkprop={link}/>
-        <Snap linkprop={link}/>
-        <Twit linkprop={link}/>
+        <Insta linkprop={link} />
+        <Snap linkprop={link} />
+        <Twit linkprop={link} />
       </div>
     </>
   );
