@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Toaster } from "@/components/ui/toaster";
 import { ClerkProvider } from "@clerk/nextjs";
 import localFont from "next/font/local";
@@ -28,7 +28,13 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
 };
-
+export const viewport: Viewport = {
+  themeColor: "#744FEE",
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: true,
+};
 const myFont = localFont({
   src: "./assets/BeatifulVibes.ttf",
   display: "swap",
