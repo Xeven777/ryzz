@@ -3,11 +3,12 @@ import { Toaster } from "@/components/ui/toaster";
 import { ClerkProvider } from "@clerk/nextjs";
 import localFont from "next/font/local";
 import "./globals.css";
+import Clarity from "@/components/Clarity";
 
 export const metadata: Metadata = {
   title: "Ryzz",
   description: "Send Anonymous Messages to your Friends!",
-  metadataBase:new URL('https://ryzz.vercel.app'),
+  metadataBase: new URL("https://ryzz.vercel.app"),
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -52,7 +53,8 @@ export default function RootLayout({
         variables: { colorPrimary: "#6C47FF" },
       }}
     >
-      <html lang="en" >
+      <html lang="en">
+        <Clarity />
         <body>{children}</body>
         <Toaster />
       </html>
