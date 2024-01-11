@@ -15,13 +15,13 @@ const SendMessages = async ({ params: { id } }: Props) => {
     user.firstName && user.lastName
       ? user.firstName[0] + user.lastName[0]
       : "RZ";
-  const username = user.firstName === null? "RyzzUser" : user.firstName;
+  const username = user.firstName === null ? "RyzzUser" : user.firstName;
   const avImg = user.hasImage
     ? user.imageUrl
     : "https://i.postimg.cc/Kcp57cXf/apple-touch-icon.png";
 
   return (
-    <div className="text-white flex min-h-screen flex-col items-center justify-center pt-16 pb-4 px-4 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-cyan-400 via-blue-500 to-purple-600 text-center relative">
+    <div className="text-white flex min-h-screen flex-col items-center justify-center pt-20 pb-4 px-4 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-cyan-400 via-blue-500 to-purple-600 text-center relative">
       <div className="fixed top-0 md:right-40">
         <InstallBtn />
       </div>

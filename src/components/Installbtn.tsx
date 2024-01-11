@@ -8,7 +8,7 @@ const InstallBtn = () => {
   const { appinstalled, canInstallprompt, isLoading, showInstallPrompt } =
     usePwa();
 
-  if (canInstallprompt || appinstalled || isLoading) return null;
+  if (!canInstallprompt || appinstalled || isLoading) return null;
 
   return (
     <div>
