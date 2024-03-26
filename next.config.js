@@ -9,7 +9,6 @@ const nextConfig = {
     },
     reactStrictMode: true,
     experimental: {
-        ppr: true,
         optimizeCss: true
     }
 }
