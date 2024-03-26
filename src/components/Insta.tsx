@@ -1,6 +1,5 @@
 "use client";
 import { saveAs } from "file-saver";
-import { useToast } from "@/components/ui/use-toast";
 import img1 from "../app/assets/IMG_20231228_165809.jpg";
 import img2 from "../app/assets/IMG_20231228_165855.jpg";
 import img3 from "../app/assets/IMG_20231228_170121.jpg";
@@ -15,11 +14,11 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import Image from "next/image";
+import { toast } from "sonner";
 interface Props {
   linkprop: string;
 }
 const Insta = ({ linkprop }: Props) => {
-  const { toast } = useToast();
   return (
     <div>
       <Drawer>
@@ -59,8 +58,7 @@ const Insta = ({ linkprop }: Props) => {
                   className="btn bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-600"
                   onClick={() => {
                     navigator.clipboard.writeText(linkprop);
-                    toast({
-                      title: "Link is copied 🔗 ",
+                    toast("Link is copied 🔗 ", {
                       description: "Now let's head to your Instagram Story!",
                     });
                   }}

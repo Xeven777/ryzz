@@ -7,7 +7,11 @@ const nextConfig = {
             },
         ],
     },
-    reactStrictMode: true
+    reactStrictMode: true,
+    experimental: {
+        ppr: true,
+        optimizeCss: true
+    }
 }
 const withPWA = require("next-pwa")({
     dest: "public",

@@ -1,9 +1,9 @@
 import type { Metadata, Viewport } from "next";
-import { Toaster } from "@/components/ui/toaster";
 import { ClerkProvider } from "@clerk/nextjs";
 import localFont from "next/font/local";
 import "./globals.css";
 import Clarity from "@/components/Clarity";
+import { Toaster } from "@/components/ui/sonner";
 
 export const metadata: Metadata = {
   title: "Ryzz",
@@ -56,7 +56,7 @@ export default function RootLayout({
       <html lang="en">
         <Clarity />
         <body>{children}</body>
-        <Toaster />
+        <Toaster richColors theme="light"/>
       </html>
     </ClerkProvider>
   );

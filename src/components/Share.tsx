@@ -1,33 +1,31 @@
 "use client";
 
 import React from "react";
-import { useToast } from "@/components/ui/use-toast";
 import Link from "next/link";
 import { Copy } from "lucide-react";
 import Wap from "./Wap";
 import Insta from "./Insta";
 import Snap from "./Snap";
 import Twit from "./Twit";
+import { toast } from "sonner";
 
 interface Props {
   userId: string;
 }
 
 const Share = ({ userId }: Props) => {
-  const { toast } = useToast();
   const link = `${window.location.origin}/send/${userId}`;
   const copyLink = () => {
     navigator.clipboard
       .writeText(link)
       .then(() => {
-        toast({
-          title: "Link is copied 🔗 ",
+        toast.success("Link is copied 🔗 ", {
           description: "Share to your Friends and Start getting Messages!🔥🤩",
         });
       })
       .catch((error) => {
         console.error("Failed to copy link to clipboard", error);
-        alert("Failed to copy link to clipboard");
+        toast.error("Failed to copy link to clipboard");
       });
   };
 

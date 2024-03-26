@@ -14,11 +14,11 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import Image from "next/image";
+import { toast } from "sonner";
 interface Props {
   linkprop: string;
 }
 const Snap = ({ linkprop }: Props) => {
-  const { toast } = useToast();
   return (
     <div>
       <Drawer>
@@ -58,8 +58,7 @@ const Snap = ({ linkprop }: Props) => {
                   className="btn bg-yellow-400"
                   onClick={() => {
                     navigator.clipboard.writeText(linkprop);
-                    toast({
-                      title: "Link is copied 🔗 ",
+                    toast.success( "Link is copied 🔗 ",{                      
                       description: "Now let's head to your Snapchat Story!",
                     });
                   }}

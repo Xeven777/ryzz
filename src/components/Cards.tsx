@@ -6,18 +6,12 @@ import {
   CardDescription,
   CardFooter,
 } from "@/components/ui/card";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { Loader2, TrashIcon } from "lucide-react";
 import { useState } from "react";
 import Message from "./Message";
 import { Separator } from "@/components/ui/separator";
+import { toast } from "sonner";
 
 interface Props {
   message: string;
@@ -41,9 +35,10 @@ const Cards = ({ message, sentAt, messageId, seen }: Props) => {
         body: JSON.stringify({ id: messageId }),
       });
       setDeleted(true);
+      toast.success("Message deleted successfully");
     } catch (error) {
       console.log(error);
-      alert("Something went wrong");
+      toast.error("Something went wrong");
     } finally {
       setLoading(false);
     }
@@ -61,7 +56,7 @@ const Cards = ({ message, sentAt, messageId, seen }: Props) => {
       });
     } catch (error) {
       console.log(error);
-      alert("Something went wrong");
+      toast.error("Something went wrong");
     }
   }
   if (deleted) {
@@ -95,7 +90,11 @@ const Cards = ({ message, sentAt, messageId, seen }: Props) => {
               onClick={handleDelete}
               className="bg-zinc-100 rounded-full p-1"
             >
-              <TrashIcon className="cursor-pointer select-none" size={20} color="red" />
+              <TrashIcon
+                className="cursor-pointer select-none"
+                size={20}
+                color="red"
+              />
             </button>
           )}
         </CardFooter>

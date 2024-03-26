@@ -1,17 +1,16 @@
 "use client";
 
 import { useState } from "react";
-import { useToast } from "@/components/ui/use-toast";
 import { Textarea } from "../components/ui/textarea";
 import { Dices, Loader, SendIcon } from "lucide-react";
 import { prompts } from "@/lib/data";
+import { toast } from "sonner";
 
 interface Props {
   userId: string;
 }
 
 const Form = ({ userId }: Props) => {
-  const { toast } = useToast();
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
   const handleSubmit = async (event: React.FormEvent) => {
@@ -20,8 +19,7 @@ const Form = ({ userId }: Props) => {
     event.preventDefault();
     try {
       if (!content) {
-        toast({
-          title: "Oopsie😕,the Message is blank...",
+        toast.warning("Oopsie😕,the Message is blank...", {
           description: "Type in something and send again!🔥🤩",
         });
       } else {
@@ -33,13 +31,15 @@ const Form = ({ userId }: Props) => {
           },
         });
         setMessage("");
-        toast({
-          title: "Message is sent successfully 💌 and anonymously!",
+        toast.success("Message is sent successfully 💌 and anonymously!", {
           description: "Create your account to get your messages!🔥🤩",
         });
       }
     } catch (error) {
       console.log(error);
+      toast.error("Failed to send message 😕", {
+        description: "Please try again later!🔥🤩",
+      });
     } finally {
       setLoading(false);
       setMessage("");
@@ -69,15 +69,18 @@ const Form = ({ userId }: Props) => {
       </div>
 
       {loading ? (
-        <button className="bg-primary text-primary-foreground hover:bg-primary/90 inline-flex items-center justify-center whitespace-nowrap rounded-md text-lg md:text-xl font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 my-4" disabled>
-          Sending... <Loader color="white" size={15} />
+        <button
+          className="bg-primary text-primary-foreground hover:bg-primary/90 inline-flex items-center justify-center whitespace-nowrap rounded-md text-lg md:text-xl font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 my-4"
+          disabled
+        >
+          Sending... <Loader color="white" size={15} className="ml-2" />
         </button>
       ) : (
         <button
           type="submit"
           className="bg-primary text-primary-foreground hover:bg-primary/90 inline-flex items-center justify-center whitespace-nowrap rounded-md text-lg md:text-xl font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 my-4 active:scale-95"
         >
-          Send <SendIcon color="white" size={15} />
+          Send <SendIcon color="white" size={15} className="ml-2" />
         </button>
       )}
     </form>
