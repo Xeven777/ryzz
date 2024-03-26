@@ -1,6 +1,5 @@
 "use client";
 import { saveAs } from "file-saver";
-import { useToast } from "@/components/ui/use-toast";
 import img1 from "../app/assets/IMG_20231228_185636.jpg";
 import img2 from "../app/assets/IMG_20231228_185741.jpg";
 import { ArrowDownToLine, Copy, Ghost } from "lucide-react";
