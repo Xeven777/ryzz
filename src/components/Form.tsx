@@ -5,6 +5,7 @@ import { Textarea } from "../components/ui/textarea";
 import { Dices, Loader, SendIcon } from "lucide-react";
 import { prompts } from "@/lib/data";
 import { toast } from "sonner";
+import { Button } from "./ui/button";
 
 interface Props {
   userId: string;
@@ -57,7 +58,7 @@ const Form = ({ userId }: Props) => {
         <Textarea
           placeholder="Show your Ryzz 🤪"
           value={message}
-          className="w-full rounded-b-2xl min-h-[120px] rounded-t-none lato bg-zinc-200/50 text-slate-800 font-semibold text-base focus:ring-inset placeholder:text-zinc-200/85"
+          className="w-full rounded-b-2xl min-h-[120px] rounded-t-none lato bg-zinc-200/50 text-slate-800 border-zinc-400/50 font-semibold text-base focus:ring-inset placeholder:text-zinc-200/85"
           onChange={(e) => setMessage(e.target.value)}
         />
         <div
@@ -68,21 +69,20 @@ const Form = ({ userId }: Props) => {
         </div>
       </div>
 
-      {loading ? (
-        <button
-          className="bg-primary text-primary-foreground hover:bg-primary/90 inline-flex items-center justify-center whitespace-nowrap rounded-md text-lg md:text-xl font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 my-4"
-          disabled
-        >
-          Sending... <Loader color="white" size={15} className="ml-2" />
-        </button>
-      ) : (
-        <button
-          type="submit"
-          className="bg-primary text-primary-foreground hover:bg-primary/90 inline-flex items-center justify-center whitespace-nowrap rounded-md text-lg md:text-xl font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 my-4 active:scale-95"
-        >
-          Send <SendIcon color="white" size={15} className="ml-2" />
-        </button>
-      )}
+      <Button
+        type="submit"
+        className="mt-4 font-semibold text-lg md:text-xl"
+        size={"lg"}
+        disabled={loading}
+      >
+        {loading ? (
+          <Loader className="animate-spin ease-in-out" />
+        ) : (
+          <>
+            Send <SendIcon className="ml-2" />
+          </>
+        )}
+      </Button>
     </form>
   );
 };

@@ -1,5 +1,6 @@
 import prisma from "@/lib/db/prisma";
 import { NextResponse } from "next/server";
+import { auth } from "@clerk/nextjs/server";
 
 export async function POST(req: Request) {
   try {
@@ -63,4 +64,21 @@ export async function PATCH(req: Request) {
       { status: 500 }
     );
   }
+}
+
+export async function GET() {
+  const { userId } = await auth();
+
+  if (!userId) {
+    return new NextResponse("Unauthorized", { status: 401 });
+  }
+
+  const messages = await prisma.message.findMany({
+    where: { userId },
+    orderBy: {
+      createdAt: "desc",
+    },
+  });
+
+  return NextResponse.json(messages);
 }
