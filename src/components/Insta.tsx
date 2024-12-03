@@ -23,7 +23,7 @@ const Insta = ({ linkprop }: Props) => {
   return (
     <div>
       <Drawer>
-        <DrawerTrigger>
+        <DrawerTrigger asChild>
           <Button className="bg-gradient-to-br from-fuchsia-500 via-red-600 to-orange-400">
             Instagram <Instagram size={18} className="ml-2" />
           </Button>
@@ -107,8 +107,8 @@ const Insta = ({ linkprop }: Props) => {
             </ul>
           </div>
           <DrawerFooter>
-            <DrawerClose>
-              <Button>Got It</Button>
+            <DrawerClose asChild>
+              <Button className="w-fit mx-auto">Got It</Button>
             </DrawerClose>
           </DrawerFooter>
         </DrawerContent>

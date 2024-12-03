@@ -22,7 +22,7 @@ const Snap = ({ linkprop }: Props) => {
   return (
     <div>
       <Drawer>
-        <DrawerTrigger>
+        <DrawerTrigger asChild>
           <Button className="bg-yellow-400 text-zinc-800 hover:bg-yellow-500">
             Snapchat <Ghost size={18} className="ml-2" />
           </Button>
@@ -95,10 +95,8 @@ const Snap = ({ linkprop }: Props) => {
             </ul>
           </div>
           <DrawerFooter>
-            <DrawerClose>
-              <button className="btn bg-primary text-primary-foreground">
-                Got It
-              </button>
+            <DrawerClose asChild>
+              <Button className="w-fit mx-auto">Got It</Button>
             </DrawerClose>
           </DrawerFooter>
         </DrawerContent>

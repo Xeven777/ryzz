@@ -6,12 +6,18 @@ import {
   CardDescription,
   CardFooter,
 } from "@/components/ui/card";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import { Loader2, TrashIcon } from "lucide-react";
 import { useState } from "react";
 import Message from "./Message";
 import { Separator } from "@/components/ui/separator";
 import { toast } from "sonner";
+import { Button } from "./ui/button";
 
 interface Props {
   message: string;
@@ -64,7 +70,7 @@ const Cards = ({ message, sentAt, messageId, seen }: Props) => {
   }
   return isSeen ? (
     <Dialog>
-      <Card className="border-primary/30 cursor-pointer hover:-translate-y-1 hover:shadow-md transition-all duration-300 pb-0">
+      <Card className="border-primary/30 dark:border-primary/15 cursor-pointer hover:-translate-y-1 hover:shadow-md transition-all duration-300 pb-0">
         <DialogTrigger asChild>
           <CardContent>
             <p className="pt-5 line-clamp-1">{message}</p>
@@ -73,34 +79,24 @@ const Cards = ({ message, sentAt, messageId, seen }: Props) => {
         <Separator />
         <CardFooter className="flex justify-between py-1">
           <CardDescription>{sentAt}</CardDescription>
-          {loading ? (
-            <button
-              title="delete"
-              type="button"
-              onClick={handleDelete}
-              disabled
-              className="bg-fuchsia-600 text-white rounded-full p-1 select-none"
-            >
-              <Loader2 className="animate-spin cursor-wait" size={20} />
-            </button>
-          ) : (
-            <button
-              title="delete"
-              type="button"
-              onClick={handleDelete}
-              className="bg-zinc-100 rounded-full p-1"
-            >
-              <TrashIcon
-                className="cursor-pointer select-none"
-                size={20}
-                color="red"
-              />
-            </button>
-          )}
+          <Button
+            title="delete"
+            onClick={handleDelete}
+            variant={"ghost"}
+            size={"icon"}
+            disabled={loading}
+          >
+            {!loading ? (
+              <TrashIcon size={20} color="red" />
+            ) : (
+              <Loader2 size={20} className="animate-spin ease-in-out" />
+            )}
+          </Button>
         </CardFooter>
       </Card>
 
       <DialogContent className="px-2 md:p-6">
+        <DialogTitle className="sr-only">Message</DialogTitle>
         <Message message={message} />
       </DialogContent>
     </Dialog>

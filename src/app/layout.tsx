@@ -49,17 +49,19 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <ClerkProvider
-        appearance={{
-          variables: { colorPrimary: "#6C47FF" },
-        }}
-      >
+      <body>
         <ThemeProvider attribute="class" defaultTheme="dark">
-          <Clarity />
-          <body>{children}</body>
-          <ThemedToaster />
+          <ClerkProvider
+            appearance={{
+              variables: { colorPrimary: "#6C47FF" },
+            }}
+          >
+            <Clarity />
+            {children}
+            <ThemedToaster />
+          </ClerkProvider>
         </ThemeProvider>
-      </ClerkProvider>
+      </body>
     </html>
   );
 }

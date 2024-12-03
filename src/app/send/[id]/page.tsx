@@ -9,7 +9,8 @@ type Props = {
   params: { id: string };
 };
 
-const SendMessages = async ({ params: { id } }: Props) => {
+const SendMessages = async ({ params }: Props) => {
+  const { id } = await params;
   const user = await (await clerkClient()).users.getUser(id);
   const initials =
     user.firstName && user.lastName
@@ -34,8 +35,8 @@ const SendMessages = async ({ params: { id } }: Props) => {
           <AvatarFallback>{initials}</AvatarFallback>
         </Avatar>
         <div>
-          <p className="md:text-base text-sm text-zinc-600">@{username}</p>
-          <p className="font-semibold md:text-lg">
+          <p className="md:text-base text-sm text-zinc-600 font-medium">@{username}</p>
+          <p className="font-semibold md:text-lg mont">
             Send anonymous messages here 💌
           </p>
         </div>
