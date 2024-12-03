@@ -9,6 +9,12 @@ export const metadata: Metadata = {
   title: "Ryzz",
   description: "Send Anonymous Messages to your Friends!",
   metadataBase: new URL("https://ryzz.vercel.app"),
+  authors: [
+    {
+      name: "Anish",
+      url: "https://anish7.me",
+    },
+  ],
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -48,16 +54,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <ClerkProvider
-      appearance={{
-        variables: { colorPrimary: "#6C47FF" },
-      }}
-    >
-      <html lang="en">
+    <html lang="en">
+      <ClerkProvider
+        appearance={{
+          variables: { colorPrimary: "#6C47FF" },
+        }}
+      >
         <Clarity />
         <body>{children}</body>
-        <Toaster richColors theme="light"/>
-      </html>
-    </ClerkProvider>
+        <Toaster richColors theme="light" />
+      </ClerkProvider>
+    </html>
   );
 }

@@ -1,4 +1,4 @@
-import { auth } from "@clerk/nextjs";
+import { auth } from "@clerk/nextjs/server";
 import prisma from "../../lib/db/prisma";
 import Share from "@/components/Share";
 import Cards from "@/components/Cards";
@@ -6,10 +6,10 @@ import Refresh from "@/components/Refresh";
 import { Suspense } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
 
-export const revalidate = 1;
+export const revalidate = 100;
 
 const page = async () => {
-  const { userId } = auth();
+  const { userId } = await auth();
 
   if (userId === null) {
     return;
@@ -24,7 +24,7 @@ const page = async () => {
 
   return (
     <>
-      <Suspense fallback={<Skeleton className="w-[200px] my-2 h-[30px]" />}>
+      <Suspense fallback={<Skeleton className="w-52 my-2 h-8" />}>
         <Share userId={userId} />
       </Suspense>
       <h1 className="md:text-5xl text-3xl mt-8 mb-1 tracking-tighter font-bold mont">
@@ -36,7 +36,7 @@ const page = async () => {
         </span>{" "}
         ! 💌
       </h1>
-      <Suspense fallback={<Skeleton className="w-[200px] my-2 h-[30px]" />}>
+      <Suspense fallback={<Skeleton className="w-52 my-2 h-8" />}>
         <p className="font-semibold text-lg text-muted-foreground px-1 mont">
           Ryzz-o-Meter : {allMessages.length}{" "}
           <span className="animate-pulse">🔥</span>
@@ -46,9 +46,7 @@ const page = async () => {
       <Refresh />
 
       <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-2 max-w-6xl py-3">
-        <Suspense
-          fallback={<Skeleton className="rounded-lg" />}
-        >
+        <Suspense fallback={<Skeleton className="rounded-lg" />}>
           {allMessages.map((message) => (
             <Cards
               key={message.id}
