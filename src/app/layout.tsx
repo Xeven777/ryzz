@@ -1,8 +1,15 @@
 import type { Metadata, Viewport } from "next";
+import { Mona_Sans } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
 import "./globals.css";
 import Clarity from "@/components/Clarity";
 import { ThemedToaster, ThemeProvider } from "@/components/ThemeProvider";
+
+const mona = Mona_Sans({
+  subsets: ["latin"],
+  display: "swap",
+  fallback: ["Arial", "system-ui", "sans-serif"],
+});
 
 export const metadata: Metadata = {
   title: "Ryzz",
@@ -49,7 +56,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body className={mona.className}>
         <ThemeProvider attribute="class" defaultTheme="light">
           <ClerkProvider
             appearance={{
