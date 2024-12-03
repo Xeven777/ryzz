@@ -1,4 +1,3 @@
-import Footer from "@/components/Footer";
 import InstallBtn from "@/components/Installbtn";
 import Navbar from "@/components/Navbar";
 
@@ -14,7 +13,6 @@ export default function LayoutNotes({
         <InstallBtn />
       </div>
       <main className="p-4 max-w-6xl m-auto mb-14">{children}</main>
-      <Footer />
     </>
   );
 }

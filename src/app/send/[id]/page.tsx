@@ -3,14 +3,14 @@ import { VenetianMask } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { clerkClient } from "@clerk/nextjs";
+import { clerkClient } from "@clerk/nextjs/server";
 import InstallBtn from "@/components/Installbtn";
 type Props = {
   params: { id: string };
 };
 
 const SendMessages = async ({ params: { id } }: Props) => {
-  const user = await clerkClient.users.getUser(id);
+  const user = await (await clerkClient()).users.getUser(id);
   const initials =
     user.firstName && user.lastName
       ? user.firstName[0] + user.lastName[0]

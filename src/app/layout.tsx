@@ -1,9 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { ClerkProvider } from "@clerk/nextjs";
-import localFont from "next/font/local";
 import "./globals.css";
 import Clarity from "@/components/Clarity";
-import { Toaster } from "@/components/ui/sonner";
+import { ThemedToaster, ThemeProvider } from "@/components/ThemeProvider";
 
 export const metadata: Metadata = {
   title: "Ryzz",
@@ -42,11 +41,6 @@ export const viewport: Viewport = {
   maximumScale: 1,
   userScalable: true,
 };
-const myFont = localFont({
-  src: "./assets/BeatifulVibes.ttf",
-  display: "swap",
-  variable: "--font-vibes",
-});
 
 export default function RootLayout({
   children,
@@ -60,9 +54,11 @@ export default function RootLayout({
           variables: { colorPrimary: "#6C47FF" },
         }}
       >
-        <Clarity />
-        <body>{children}</body>
-        <Toaster richColors theme="light" />
+        <ThemeProvider attribute="class" defaultTheme="dark">
+          <Clarity />
+          <body>{children}</body>
+          <ThemedToaster />
+        </ThemeProvider>
       </ClerkProvider>
     </html>
   );
