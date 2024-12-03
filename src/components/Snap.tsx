@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/drawer";
 import Image from "next/image";
 import { toast } from "sonner";
+import { Button } from "./ui/button";
 interface Props {
   linkprop: string;
 }
@@ -22,9 +23,9 @@ const Snap = ({ linkprop }: Props) => {
     <div>
       <Drawer>
         <DrawerTrigger>
-          <button className="max-w-min hover:opacity-90 inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 font-medium active:scale-95 transition-all bg-yellow-400 text-zinc-800">
+          <Button className="bg-yellow-400 text-zinc-800 hover:bg-yellow-500">
             Snapchat <Ghost size={18} className="ml-2" />
-          </button>
+          </Button>
         </DrawerTrigger>
 
         <DrawerContent className="mont">
@@ -57,7 +58,7 @@ const Snap = ({ linkprop }: Props) => {
                   className="btn bg-yellow-400"
                   onClick={() => {
                     navigator.clipboard.writeText(linkprop);
-                    toast.success( "Link is copied 🔗 ",{                      
+                    toast.success("Link is copied 🔗 ", {
                       description: "Now let's head to your Snapchat Story!",
                     });
                   }}
@@ -74,6 +75,8 @@ const Snap = ({ linkprop }: Props) => {
                 <Image
                   src={img1}
                   alt=""
+                  placeholder="blur"
+                  fetchPriority="low"
                   width={200}
                   className="md:max-w-[350px] rounded-2xl w-[240px] h-[60px] object-cover"
                 />
@@ -83,6 +86,8 @@ const Snap = ({ linkprop }: Props) => {
                 <Image
                   src={img2}
                   alt=""
+                  placeholder="blur"
+                  fetchPriority="low"
                   width={200}
                   className="md:max-w-[350px] rounded-2xl w-[240px] h-[60px] object-cover"
                 />

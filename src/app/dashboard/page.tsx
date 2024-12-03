@@ -28,7 +28,7 @@ const page = async () => {
         <Share userId={userId} />
       </Suspense>
       <h1 className="md:text-5xl text-3xl mt-8 mb-1 tracking-tighter font-bold mont">
-        <span className="bg-gradient-to-br from-zinc-600 to-zinc-950 text-transparent bg-clip-text">
+        <span className="bg-gradient-to-tl from-foreground/65 to-foreground text-transparent bg-clip-text">
           Your{" "}
         </span>
         <span className="tracking-normal bg-gradient-to-br from-purple-400 via-purple-600 to-purple-800 text-transparent bg-clip-text">

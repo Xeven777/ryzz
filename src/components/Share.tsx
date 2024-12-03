@@ -8,12 +8,9 @@ import Insta from "./Insta";
 import Snap from "./Snap";
 import Twit from "./Twit";
 import { toast } from "sonner";
+import { Button } from "./ui/button";
 
-interface Props {
-  userId: string;
-}
-
-const Share = ({ userId }: Props) => {
+const Share = ({ userId }: { userId: string }) => {
   const link = `${window.location.origin}/send/${userId}`;
   const copyLink = () => {
     navigator.clipboard
@@ -31,22 +28,19 @@ const Share = ({ userId }: Props) => {
 
   return (
     <>
-      <h1 className="text-xl md:text-3xl font-bold mt-3 md:mt-5 mb-3 tracking-tight text-zinc-800 mont">
+      <h1 className="text-xl md:text-3xl font-bold mt-3 md:mt-5 mb-3 tracking-tight mont">
         Share your Link
       </h1>
       <div className="flex flex-row items-center gap-2 flex-wrap">
         <Link
           href={`/send/${userId}`}
-          className="py-1 px-3 border border-primary rounded-md text-purple-900 hover:text-purple-600 transition duration-300 ease-in-out max-w-2xl truncate"
+          className="py-1 px-3 border border-primary/80 rounded-md transition-all duration-300 max-w-2xl truncate text-primary dark:text-purple-500"
         >
           {link}
         </Link>
-        <button
-          onClick={copyLink}
-          className="max-w-min bg-primary text-primary-foreground hover:bg-primary/90 inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 font-medium active:scale-95 transition-all"
-        >
+        <Button onClick={copyLink}>
           Copy Link <Copy size={16} className="ml-2" />
-        </button>
+        </Button>
         <Wap linkprop={link} />
         <Insta linkprop={link} />
         <Snap linkprop={link} />

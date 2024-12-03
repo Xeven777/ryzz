@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/drawer";
 import Image from "next/image";
 import { toast } from "sonner";
+import { Button } from "./ui/button";
 interface Props {
   linkprop: string;
 }
@@ -23,9 +24,9 @@ const Insta = ({ linkprop }: Props) => {
     <div>
       <Drawer>
         <DrawerTrigger>
-          <button className="btn bg-gradient-to-br from-fuchsia-500 via-red-600 to-orange-400">
+          <Button className="bg-gradient-to-br from-fuchsia-500 via-red-600 to-orange-400">
             Instagram <Instagram size={18} className="ml-2" />
-          </button>
+          </Button>
         </DrawerTrigger>
 
         <DrawerContent className="mont">
@@ -74,7 +75,9 @@ const Insta = ({ linkprop }: Props) => {
                 4.{" "}
                 <Image
                   src={img1}
+                  placeholder="blur"
                   alt=""
+                  fetchPriority="low"
                   width={200}
                   className="md:max-w-[350px] rounded-2xl w-[230px] h-[50px] object-cover"
                 />
@@ -83,7 +86,9 @@ const Insta = ({ linkprop }: Props) => {
                 5.{" "}
                 <Image
                   src={img2}
+                  placeholder="blur"
                   alt=""
+                  fetchPriority="low"
                   width={200}
                   className="md:max-w-[350px] rounded-2xl w-[250px] h-[70px] object-cover object-bottom"
                 />
@@ -92,7 +97,9 @@ const Insta = ({ linkprop }: Props) => {
                 6.{" "}
                 <Image
                   src={img3}
+                  placeholder="blur"
                   alt=""
+                  fetchPriority="low"
                   width={200}
                   className="md:max-w-[350px] rounded-2xl w-[240px] h-[160px] object-cover"
                 />
@@ -101,9 +108,7 @@ const Insta = ({ linkprop }: Props) => {
           </div>
           <DrawerFooter>
             <DrawerClose>
-              <button className="btn bg-primary text-primary-foreground">
-                Got It
-              </button>
+              <Button>Got It</Button>
             </DrawerClose>
           </DrawerFooter>
         </DrawerContent>
