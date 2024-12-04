@@ -11,6 +11,7 @@ import {
   Users,
   Zap,
 } from "lucide-react";
+import { VelocityScroll } from "./ui/scroll-based-velocity";
 
 export default function LandingPage() {
   return (
@@ -20,12 +21,12 @@ export default function LandingPage() {
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600"
+            className="text-2xl __className_938c5f font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600"
           >
-            whispr
+            Ryzz
           </motion.div>
           <div className="flex items-center gap-4">
-            <Button variant="ghost">Login</Button>
+            <Button variant="ghost">About</Button>
             <Button>Get Started</Button>
           </div>
         </nav>
@@ -34,14 +35,21 @@ export default function LandingPage() {
       <main className="pb-16 md:px-4">
         <div className="mx-auto space-y-24">
           {/* Hero Section */}
-          <section className="text-center flex items-center justify-center flex-col bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-cyan-400 via-blue-500 to-purple-600 rounded-3xl min-h-[90svh]">
+          <section className="text-center flex items-center justify-center flex-col bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-cyan-400 via-blue-500 to-purple-600 rounded-3xl min-h-[800px] relative overflow-hidden">
+            <div className="h-28 bg-slate-200/20 w-full absolute top-0">
+              <VelocityScroll
+                text="Share your thoughts anonymously"
+                default_velocity={5}
+                className="text-center text-4xl font-bold tracking-tight text-white md:text-7xl leading-relaxed"
+              />
+            </div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
               className="space-y-4"
             >
-              <div className="bg-purple-100 text-purple-700 dark:bg-purple-900 dark:text-purple-100 px-4 py-1 rounded-full">
+              <div className="bg-purple-100 w-fit text-purple-700 dark:bg-purple-900 dark:text-purple-100 px-4 py-1 rounded-full">
                 🚀 Join 10k+ early users
               </div>
               <h1 className="text-5xl md:text-7xl text-white font-bold tracking-tight">

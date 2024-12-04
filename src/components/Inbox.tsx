@@ -48,7 +48,7 @@ const Inbox = () => {
           />
         ))}
         {messages.length === 0 && (
-          <div className="text-center col-span-full p-2 mt-16 md:text-lg text-muted-foreground lato">
+          <div className="text-center col-span-full p-2 mt-16 md:text-lg text-muted-foreground ">
             No Messages found. Share Link above and start getting messages!!
           </div>
         )}

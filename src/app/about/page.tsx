@@ -5,7 +5,7 @@ const page = () => {
   const devId = "user_2ZIRRRajBpJNA7AWVOftSjo84gM";
   return (
     <div className="min-h-screen flex flex-col max-w-6xl items-center py-5 px-3 mx-auto">
-      <h1 className="text-5xl md:text-7xl font-semibold lato text-zinc-800">
+      <h1 className="text-5xl md:text-7xl font-semibold  text-zinc-800">
         About{" "}
         <span className="p-2 font-bold __className_938c5f bg-clip-text text-transparent bg-gradient-to-tl from-violet-600 via-purple-700 to-fuchsia-400 logo">
           Ryzz

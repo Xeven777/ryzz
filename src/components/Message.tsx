@@ -48,7 +48,7 @@ const Message = ({ message }: Props) => {
               R
             </p>
           </div>
-          <p className="lato p-5 lg:px-7 text-lg md:text-xl font-semibold text-zinc-800 overflow-y-auto md:max-h-96 max-h-[400px] leading-tight ">
+          <p className=" p-5 lg:px-7 text-lg md:text-xl font-semibold text-zinc-800 overflow-y-auto md:max-h-96 max-h-[400px] leading-tight ">
             {message}
           </p>
         </div>

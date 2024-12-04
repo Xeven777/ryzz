@@ -34,7 +34,7 @@ const Snap = ({ linkprop }: Props) => {
               Steps To Share Ryzz Link to Snapchat :
             </DrawerTitle>
           </DrawerHeader>
-          <div className="lg:max-w-5xl mx-auto lato">
+          <div className="lg:max-w-5xl mx-auto ">
             <ul className="gap-3 flex flex-col px-5">
               <li>
                 1. Download Story Template{" "}

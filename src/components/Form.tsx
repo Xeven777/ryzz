@@ -58,7 +58,7 @@ const Form = ({ userId }: Props) => {
         <Textarea
           placeholder="Show your Ryzz 🤪"
           value={message}
-          className="w-full rounded-b-2xl min-h-[120px] rounded-t-none lato bg-zinc-200/50 text-slate-800 border-zinc-400/50 font-semibold text-base focus:ring-inset placeholder:text-zinc-200/85"
+          className="w-full rounded-b-2xl min-h-[120px] rounded-t-none  bg-zinc-200/50 text-slate-800 border-zinc-400/50 font-semibold text-base focus:ring-inset placeholder:text-zinc-200/85"
           onChange={(e) => setMessage(e.target.value)}
         />
         <div
