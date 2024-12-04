@@ -1,9 +1,5 @@
 import { auth } from "@clerk/nextjs/server";
-import Link from "next/link";
-import hero from "./assets/Social media-cuate.svg";
 import { redirect } from "next/navigation";
-import Image from "next/image";
-import InstallBtn from "@/components/Installbtn";
 import LandingPage from "@/components/LandingPage";
 
 export default async function Home() {

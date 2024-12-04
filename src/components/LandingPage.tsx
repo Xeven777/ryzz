@@ -12,6 +12,9 @@ import {
   Zap,
 } from "lucide-react";
 import { VelocityScroll } from "./ui/scroll-based-velocity";
+import img1 from "@/app/assets/cartoon1.png";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function LandingPage() {
   return (
@@ -35,7 +38,7 @@ export default function LandingPage() {
       <main className="pb-16 md:px-4">
         <div className="mx-auto space-y-24">
           {/* Hero Section */}
-          <section className="text-center flex items-center justify-center flex-col bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-cyan-400 via-blue-500 to-purple-600 rounded-3xl min-h-[800px] relative overflow-hidden">
+          <section className="relative flex items-center justify-center flex-col bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-cyan-400 via-blue-500 to-purple-600 rounded-3xl min-h-[770px] overflow-hidden">
             <div className="h-28 bg-slate-200/20 w-full absolute top-0">
               <VelocityScroll
                 text="Share your thoughts anonymously"
@@ -47,34 +50,35 @@ export default function LandingPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="space-y-4"
+              className="absolute bottom-0"
             >
-              <div className="bg-purple-100 w-fit text-purple-700 dark:bg-purple-900 dark:text-purple-100 px-4 py-1 rounded-full">
-                🚀 Join 10k+ early users
-              </div>
-              <h1 className="text-5xl md:text-7xl text-white font-bold tracking-tight">
-                Share your thoughts
-                <span className="block text-purple-600 dark:text-purple-400">
-                  anonymously
-                </span>
-              </h1>
-              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Express yourself freely. Connect authentically. Stay anonymous.
-              </p>
+              <Image
+                src={img1}
+                alt="Cartoon character"
+                width={720}
+                placeholder="blur"
+                fetchPriority="high"
+                height={800}
+                className="w-full max-w-[720px] mx-auto drop-shadow-md select-none pointer-events-none"
+              />
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="flex flex-wrap justify-center gap-4"
+              className="absolute bottom-2 w-full text-center"
             >
-              <Button size="lg" className="text-lg">
-                Start Messaging
-                <ArrowRight className="ml-2" />
-              </Button>
-              <Button size="lg" variant="outline" className="text-lg">
-                Learn More
-              </Button>
+              <Link href={"/dashboard"}>
+                <Button
+                  size="lg"
+                  className="text-lg bg-[#E9FF7A] text-black hover:bg-[#e1f872] -rotate-3 hover:scale-110 duration-500 pl-20 pr-10 hover:pr-16 hover:pl-10 rounded-full active:rotate-0 py-8 group"
+                >
+                  Start Now
+                  <div className="bg-black p-5 rounded-full absolute left-1 group-hover:translate-x-[126px] transition-all duration-500">
+                    <ArrowRight color="white" size={40} className="size-8" />
+                  </div>
+                </Button>
+              </Link>
             </motion.div>
           </section>
 
