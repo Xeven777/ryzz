@@ -5,11 +5,8 @@ import React from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { clerkClient } from "@clerk/nextjs/server";
 import InstallBtn from "@/components/Installbtn";
-type Props = {
-  params: { id: string };
-};
 
-const SendMessages = async ({ params }: Props) => {
+const SendMessages = async ({ params }: any) => {
   const { id } = await params;
   const user = await (await clerkClient()).users.getUser(id);
   const initials =
@@ -35,7 +32,9 @@ const SendMessages = async ({ params }: Props) => {
           <AvatarFallback>{initials}</AvatarFallback>
         </Avatar>
         <div>
-          <p className="md:text-base text-sm text-zinc-600 font-medium">@{username}</p>
+          <p className="md:text-base text-sm text-zinc-600 font-medium">
+            @{username}
+          </p>
           <p className="font-semibold md:text-lg mont">
             Send anonymous messages here 💌
           </p>
