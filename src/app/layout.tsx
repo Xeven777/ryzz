@@ -1,11 +1,11 @@
 import type { Metadata, Viewport } from "next";
-import { Mona_Sans } from "next/font/google";
+import { Funnel_Sans } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
 import "./globals.css";
 import Clarity from "@/components/Clarity";
 import { ThemedToaster, ThemeProvider } from "@/components/ThemeProvider";
 
-const mona = Mona_Sans({
+const mona = Funnel_Sans({
   subsets: ["latin"],
   display: "swap",
   fallback: ["Arial", "system-ui", "sans-serif"],

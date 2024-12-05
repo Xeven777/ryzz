@@ -23,9 +23,7 @@ const SendMessages = async ({ params }: any) => {
       <div className="fixed top-0 md:right-40">
         <InstallBtn />
       </div>
-      <h2 className="text-6xl md:text-9xl font-bold __className_938c5f p-2 ryzz logo">
-        Ryzz
-      </h2>
+      <h2 className="text-6xl md:text-9xl font-bold  p-2 ryzz logo">Ryzz</h2>
       <div className="bg-white/90 flex gap-3 px-4 py-3 mont text-zinc-900 mt-3 sm:w-5/12 min-w-[220px] w-full rounded-t-2xl items-center leading-tight text-start">
         <Avatar>
           <AvatarImage src={avImg} alt={initials} />

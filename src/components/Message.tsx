@@ -44,7 +44,7 @@ const Message = ({ message }: Props) => {
             className={`${gradient} mont text-lg md:py-7 md:text-xl py-5 px-3 font-semibold text-white rounded-t-2xl tracking-tight leading-tight relative`}
           >
             Send me anonymous messages !
-            <p className="absolute __className_938c5f logo ryzz text-zinc-50/60 text-sm right-2 bottom-1">
+            <p className="absolute  logo ryzz text-zinc-50/60 text-sm right-2 bottom-1">
               R
             </p>
           </div>
