@@ -25,8 +25,10 @@ export default async function Home() {
             Ryzz
           </div>
           <div className="flex items-center gap-4">
-            <Button variant="ghost">About</Button>
-            <Button>
+            <Button variant="ghost">
+              <Link href={"/about"}>About</Link>
+            </Button>
+            <Button asChild>
               <Link href={"/dashboard"}>Get Started</Link>
             </Button>
           </div>
@@ -42,55 +44,46 @@ export default async function Home() {
               Features
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-              <div className="col-span-full lg:col-span-3">
-                <Card className="p-8 bg-gradient-to-br from-purple-500 to-pink-500 text-white h-full">
-                  <div className="space-y-4">
-                    <Sparkles className="w-8 h-8" />
-                    <h3 className="text-2xl font-bold">Complete Anonymity</h3>
-                    <p className="text-purple-100">
-                      Our advanced encryption ensures your identity stays
-                      hidden. Express yourself without fear.
-                    </p>
-                  </div>
-                </Card>
-              </div>
+              <Card className="p-8 bg-gradient-to-br from-purple-500 to-pink-500 text-white h-full col-span-full lg:col-span-3">
+                <div className="space-y-4">
+                  <Sparkles className="w-8 h-8" />
+                  <h3 className="text-2xl font-bold">Complete Anonymity</h3>
+                  <p className="text-purple-100">
+                    Our advanced encryption ensures your identity stays hidden.
+                    Express yourself without fear.
+                  </p>
+                </div>
+              </Card>
 
-              <div className="col-span-full lg:col-span-2">
-                <Card className="p-8 h-full bg-purple-100 dark:bg-purple-900">
-                  <div className="space-y-4">
-                    <Shield className="w-8 h-8 text-purple-600 dark:text-purple-400" />
-                    <h3 className="text-2xl font-bold">End-to-End Encrypted</h3>
-                    <p className="text-muted-foreground">
-                      Your messages are only visible to you and your recipients.
-                    </p>
-                  </div>
-                </Card>
-              </div>
+              <Card className="p-8 h-full bg-purple-100 dark:bg-purple-900 col-span-full lg:col-span-2">
+                <div className="space-y-4">
+                  <Shield className="w-8 h-8 text-purple-600 dark:text-purple-400" />
+                  <h3 className="text-2xl font-bold">End-to-End Encrypted</h3>
+                  <p className="text-muted-foreground">
+                    Your messages are only visible to you and your recipients.
+                  </p>
+                </div>
+              </Card>
 
-              <div className="col-span-full lg:col-span-2">
-                <Card className="p-8 bg-yellow-100 dark:bg-yellow-900/50">
-                  <div className="space-y-4">
-                    <Zap className="w-8 h-8 text-yellow-600 dark:text-yellow-400" />
-                    <h3 className="text-2xl font-bold">Instant Delivery</h3>
-                    <p className="text-muted-foreground">
-                      Messages are delivered in real-time, anywhere in the
-                      world.
-                    </p>
-                  </div>
-                </Card>
-              </div>
+              <Card className="p-8 bg-yellow-100 dark:bg-yellow-900/50 col-span-full lg:col-span-2">
+                <div className="space-y-4">
+                  <Zap className="w-8 h-8 text-yellow-600 dark:text-yellow-400" />
+                  <h3 className="text-2xl font-bold">Instant Delivery</h3>
+                  <p className="text-muted-foreground">
+                    Messages are delivered in real-time, anywhere in the world.
+                  </p>
+                </div>
+              </Card>
 
-              <div className="col-span-full lg:col-span-3">
-                <Card className="p-8 bg-green-100 dark:bg-green-900/50">
-                  <div className="space-y-4">
-                    <Users className="w-8 h-8 text-green-600 dark:text-green-400" />
-                    <h3 className="text-2xl font-bold">Growing Community</h3>
-                    <p className="text-muted-foreground">
-                      Join thousands of users sharing their thoughts freely.
-                    </p>
-                  </div>
-                </Card>
-              </div>
+              <Card className="p-8 bg-green-100 dark:bg-green-900/50 h-full col-span-full lg:col-span-3">
+                <div className="space-y-4">
+                  <Users className="w-8 h-8 text-green-600 dark:text-green-400" />
+                  <h3 className="text-2xl font-bold">Growing Community</h3>
+                  <p className="text-muted-foreground">
+                    Join thousands of users sharing their thoughts freely.
+                  </p>
+                </div>
+              </Card>
             </div>
           </section>
 
@@ -118,7 +111,7 @@ export default async function Home() {
         </div>
       </main>
 
-      <footer className="border-t">
+      <footer className="border-t rounded-t-3xl">
         <div className="max-w-7xl mx-auto px-4 py-6 text-center text-sm text-muted-foreground">
           © 2024 Ryzz. All rights reserved.
         </div>

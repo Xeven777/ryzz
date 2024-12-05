@@ -1,13 +1,14 @@
-import { Home, Mail, Smile } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { ChevronLeft, Home, Mail, Smile } from "lucide-react";
 import Link from "next/link";
 
 const page = () => {
   const devId = "user_2ZIRRRajBpJNA7AWVOftSjo84gM";
   return (
-    <div className="min-h-screen flex flex-col max-w-6xl items-center py-5 px-3 mx-auto">
-      <h1 className="text-5xl md:text-7xl font-semibold  text-zinc-800">
+    <div className="min-h-screen flex flex-col max-w-6xl items-center py-12 px-3 mx-auto">
+      <h1 className="text-5xl md:text-7xl font-semibold tracking-tighter">
         About{" "}
-        <span className="p-2 font-bold  bg-clip-text text-transparent bg-gradient-to-tl from-violet-600 via-purple-700 to-fuchsia-400 logo">
+        <span className="p-2 font-bold tracking-normal bg-clip-text text-transparent bg-gradient-to-tl from-violet-600 via-purple-700 to-fuchsia-400 logo">
           Ryzz
         </span>
       </h1>
@@ -72,15 +73,16 @@ const page = () => {
           </Link>
         </p>
       </div>
-      <div className="mt-6">
-        Back Home :{" "}
-        <Link
-          href="/"
-          className="bg-blue-600 text-white p-2 rounded-sm active:scale-95"
-        >
-          Home <Home size={16} className="inline-flex" />
+      <Button
+        variant="secondary"
+        className="sm:fixed top-10 left-20 underline"
+        asChild
+      >
+        <Link href={"/"}>
+          <ChevronLeft />
+          Go Home
         </Link>
-      </div>
+      </Button>
     </div>
   );
 };
