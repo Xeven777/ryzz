@@ -10,9 +10,9 @@ export function ThemeToggle() {
 
   return (
     <Button
-      variant="outline"
+      variant="ghost"
       size="icon"
-      className="rounded-full shadow"
+      className="rounded-full shadow bg-transparent"
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
     >
       <Sun className="size-5 rotate-0 scale-100 transition-all dark:-rotate-180 dark:scale-0 duration-500" />

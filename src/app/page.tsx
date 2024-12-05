@@ -10,6 +10,7 @@ import emojis from "@/app/assets/emojis.png";
 import img2 from "@/app/assets/3dcartn.png";
 import cloud from "@/app/assets/cloud.png";
 import rocket from "@/app/assets/rocket.png";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 export default async function Home() {
   // const { userId } = await auth();
@@ -23,7 +24,11 @@ export default async function Home() {
             Ryzz
           </div>
           <div className="flex items-center gap-4">
-            <Button variant="ghost">
+            <ThemeToggle />
+            <Button
+              variant="accent"
+              className="bg-transparent hover:text-accent-foreground text-foreground"
+            >
               <Link href={"/about"}>About</Link>
             </Button>
             <Button asChild>
@@ -120,19 +125,19 @@ export default async function Home() {
           {/* CTA Section */}
           <section className="text-center">
             <div className="max-w-3xl mx-auto space-y-8">
-              <Card className="p-12 bg-gradient-to-r from-accent to-accent/80">
+              <Card className="p-12 bg-gradient-to-br from-accent to-accent/70 rounded-3xl box-glow">
                 <div className="space-y-6">
-                  <MessageSquare className="w-12 h-12 mx-auto text-purple-600 dark:text-purple-400" />
-                  <h2 className="text-3xl md:text-4xl font-bold">
+                  <MessageSquare className="w-12 h-12 mx-auto text-primary" />
+                  <h2 className="text-3xl md:text-4xl font-bold text-black tracking-tight">
                     Ready to start messaging?
                   </h2>
-                  <p className="text-lg text-muted-foreground">
-                    Join our community and experience true freedom of
-                    expression.
+                  <p className="text-lg text-black/80 max-w-md mx-auto">
+                    Join Ryzz today and start getting anonymous messages from
+                    your friends and family.
                   </p>
-                  <Button size="lg" className="text-lg">
-                    Get Started Now
-                    <ArrowRight className="ml-2" />
+                  <Button size="lg" variant={"outline"} className="text-lg">
+                    Let's Go!
+                    <ArrowRight className="ml-2" size={30} />
                   </Button>
                 </div>
               </Card>
