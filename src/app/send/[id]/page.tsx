@@ -20,7 +20,7 @@ const SendMessages = async ({ params }: any) => {
 
   return (
     <div className="text-white flex min-h-screen flex-col items-center justify-center pt-20 pb-4 px-4 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-cyan-400 via-blue-500 to-purple-600 text-center relative">
-      <div className="fixed top-0 md:right-40">
+      <div className="fixed top-0 md:right-40 text-black">
         <InstallBtn />
       </div>
       <h2 className="text-6xl md:text-9xl font-bold  p-2 ryzz logo">Ryzz</h2>

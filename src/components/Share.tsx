@@ -34,7 +34,7 @@ const Share = ({ userId }: { userId: string }) => {
       <div className="flex flex-row items-center gap-2 flex-wrap">
         <Link
           href={`/send/${userId}`}
-          className="py-1 px-3 border border-primary/80 rounded-md transition-all duration-300 max-w-2xl truncate text-primary dark:text-purple-500"
+          className="py-1 px-3 border border-primary/80 rounded-md transition-all duration-300 max-w-md truncate text-primary dark:text-purple-500"
         >
           {link}
         </Link>

@@ -18,7 +18,7 @@ const InstallBtn = ({ className }: { className?: string }) => {
       variant={"outline"}
       className={className}
     >
-      Install <Image src={install} alt="app" width={18} />
+      Install <Image src={install} alt="app" width={18} className="dark:invert"/>
     </Button>
   );
 };

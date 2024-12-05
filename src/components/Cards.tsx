@@ -70,7 +70,7 @@ const Cards = ({ message, sentAt, messageId, seen }: Props) => {
   }
   return isSeen ? (
     <Dialog>
-      <Card className="border-primary/30 dark:border-primary/15 cursor-pointer hover:-translate-y-1 hover:shadow-md transition-all duration-300 pb-0">
+      <Card className="border-primary/30 dark:border-accent/20 cursor-pointer hover:-translate-y-1 hover:shadow-md transition-all duration-300 pb-0">
         <DialogTrigger asChild>
           <CardContent>
             <p className="pt-5 line-clamp-1">{message}</p>

@@ -15,11 +15,11 @@ const Inbox = () => {
     error,
     isLoading,
   } = useSWR(userId ? `/api/messages` : null, fetcher, {
-    refreshInterval: 15000,
+    refreshInterval: 30000,
   });
 
   if (!userId) return null;
-  if (error) return <div>Failed to load</div>;
+  if (error) return <div className="text-xl p-2">Failed to load</div>;
   if (isLoading)
     return (
       <div className="min-h-32 w-full flex items-center justify-center gap-4 text-4xl">
