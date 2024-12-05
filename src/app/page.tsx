@@ -2,25 +2,18 @@ import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import {
-  ArrowRight,
-  MessageSquare,
-  Shield,
-  Sparkles,
-  Users,
-  Zap,
-} from "lucide-react";
+import { ArrowRight, MessageSquare } from "lucide-react";
 import Link from "next/link";
 import HeroSection from "@/components/HeroSection";
 import Image from "next/image";
-import img3 from "@/app/assets/cartoon2.png";
+import emojis from "@/app/assets/emojis.png";
 import img2 from "@/app/assets/3dcartn.png";
 import cloud from "@/app/assets/cloud.png";
 import rocket from "@/app/assets/rocket.png";
 
 export default async function Home() {
-  const { userId } = await auth();
-  if (userId) redirect("/dashboard");
+  // const { userId } = await auth();
+  // if (userId) redirect("/dashboard");
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-purple-50 dark:from-purple-950 to-background">
@@ -49,67 +42,75 @@ export default async function Home() {
               Features
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-              <Card className="col-span-full flex items-end lg:col-span-3 h-64 relative bg-gradient-to-br from-yellow-500 to-amber-200">
+              <Card className="col-span-full group flex items-end lg:col-span-3 h-64 relative bg-gradient-to-br from-yellow-500 to-amber-200">
                 <Image
                   src={img2}
                   alt="Feature 1"
                   width={500}
                   height={500}
-                  className="absolute object-cover object-top bottom-0 -translate-x-20 z-0"
+                  className="absolute group-hover:-translate-x-12 duration-500 object-cover object-top bottom-0 -translate-x-20 z-0"
                 />
                 <div className="space-y-4 mt-auto text-end ml-auto p-8">
                   <h3 className="text-2xl md:text-3xl tracking-tighter font-bold text-yellow-900">
                     Complete Anonymity
                   </h3>
-                  <p className="max-w-xs leading-snug">
+                  <p className="max-w-xs leading-snug text-black">
                     Get totally anonymous messages from your friends and family
                   </p>
                 </div>
               </Card>
 
-              <Card className="flex items-end h-full bg-gradient-to-br from-cyan-400 to-blue-200 col-span-full lg:col-span-2 relative">
+              <Card className="flex items-end group h-full bg-gradient-to-br from-cyan-400 to-blue-200 col-span-full lg:col-span-2 relative">
                 <Image
                   src={cloud}
                   alt="cloud"
                   width={200}
                   height={200}
-                  className="absolute size-48 -top-6 z-0"
+                  className="absolute size-48 -top-6 z-0 group-hover:scale-105 group-hover:-top-12 duration-500"
                 />
                 <div className="space-y-4 mt-auto text-end ml-auto p-8">
                   <h3 className="text-2xl md:text-3xl tracking-tighter text-blue-900 font-bold">
                     Saved on the Cloud
                   </h3>
-                  <p className="pl-10 max-w-sw leading-snug">
+                  <p className="pl-10 max-w-sw leading-snug text-black">
                     Access your messages from anywhere in the world.
                   </p>
                 </div>
               </Card>
 
-              <Card className="flex group items-end h-52 bg-gradient-to-br from-rose-400 to-red-200 col-span-full lg:col-span-2 relative">
+              <Card className="flex group items-end h-60 bg-gradient-to-br from-rose-400 to-red-200 col-span-full lg:col-span-2 relative">
                 <Image
                   src={rocket}
-                  alt="cloud"
+                  alt="rocket"
                   width={200}
                   height={200}
-                  className="absolute size-48 -top-10 -left-4 z-0 group-hover:scale-125
+                  className="absolute size-56 -top-10 -left-4 z-0 group-hover:scale-125
                    transition-all duration-500"
                 />
                 <div className="space-y-4 mt-auto text-end ml-auto px-8 py-6">
                   <h3 className="text-2xl md:text-3xl tracking-tighter text-rose-900 font-bold">
                     Build for Scalability
                   </h3>
-                  <p className="pl-10 max-w-sw leading-snug">
+                  <p className="max-w-xs leading-snug text-black">
                     Built using the latest technologies for scalability.
                   </p>
                 </div>
               </Card>
 
-              <Card className="p-8 bg-green-100 dark:bg-green-900/50 h-full col-span-full lg:col-span-3">
-                <div className="space-y-4">
-                  <Users className="w-8 h-8 text-green-600 dark:text-green-400" />
-                  <h3 className="text-2xl font-bold">Growing Community</h3>
-                  <p className="text-muted-foreground">
-                    Join thousands of users sharing their thoughts freely.
+              <Card className="flex group items-end h-60 bg-gradient-to-br from-accent to-lime-200 col-span-full lg:col-span-3 relative">
+                <Image
+                  src={emojis}
+                  alt="emoji"
+                  width={200}
+                  height={200}
+                  className="absolute size-60 -top-10 left-8 z-0 group-hover:scale-110 group-hover:rotate-3 duration-500"
+                />
+                <div className="space-y-4 mt-auto text-end ml-auto px-8 py-6">
+                  <h3 className="text-2xl md:text-3xl tracking-tighter text-lime-900 font-bold">
+                    Share on Social Media
+                  </h3>
+                  <p className="max-w-xs leading-snug text-black">
+                    You can share the link and messages on every social media🤩
                   </p>
                 </div>
               </Card>
@@ -119,7 +120,7 @@ export default async function Home() {
           {/* CTA Section */}
           <section className="text-center">
             <div className="max-w-3xl mx-auto space-y-8">
-              <Card className="p-12 bg-gradient-to-r from-purple-100 to-pink-100 dark:from-purple-900 dark:to-pink-900">
+              <Card className="p-12 bg-gradient-to-r from-accent to-accent/80">
                 <div className="space-y-6">
                   <MessageSquare className="w-12 h-12 mx-auto text-purple-600 dark:text-purple-400" />
                   <h2 className="text-3xl md:text-4xl font-bold">
