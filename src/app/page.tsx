@@ -135,9 +135,16 @@ export default async function Home() {
                     Join Ryzz today and start getting anonymous messages from
                     your friends and family.
                   </p>
-                  <Button size="lg" variant={"outline"} className="text-lg">
-                    Let&apos;s Go!
-                    <ArrowRight className="ml-2" size={30} />
+                  <Button
+                    size="lg"
+                    variant={"outline"}
+                    className="text-lg bg-accent-foreground text-accent"
+                    asChild
+                  >
+                    <Link href={"/dashboard"}>
+                      Let&apos;s Go!
+                      <ArrowRight className="ml-2" size={30} />
+                    </Link>
                   </Button>
                 </div>
               </Card>

@@ -18,7 +18,7 @@ export default function Navbar() {
           </Link>
         </div>
 
-        <div className="flex md:gap-4 items-center">
+        <div className="flex gap-2 md:gap-4 items-center">
           <ThemeToggle />
           <UserButton
             appearance={{

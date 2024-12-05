@@ -13,7 +13,7 @@ const Page = async () => {
       <Suspense fallback={<Skeleton className="w-full my-2 h-20" />}>
         <Share userId={userId} />
       </Suspense>
-      <h1 className="md:text-5xl text-3xl mt-8 mb-1 tracking-tighter font-bold mont">
+      <h1 className="md:text-5xl text-3xl mb-1 tracking-tighter font-bold mont mt-10">
         <span className="bg-gradient-to-tl from-foreground/65 to-foreground text-transparent bg-clip-text">
           Your{" "}
         </span>
