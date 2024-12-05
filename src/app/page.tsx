@@ -136,7 +136,7 @@ export default async function Home() {
                     your friends and family.
                   </p>
                   <Button size="lg" variant={"outline"} className="text-lg">
-                    Let's Go!
+                    Let&apos;s Go!
                     <ArrowRight className="ml-2" size={30} />
                   </Button>
                 </div>
