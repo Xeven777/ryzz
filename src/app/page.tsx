@@ -12,6 +12,11 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import HeroSection from "@/components/HeroSection";
+import Image from "next/image";
+import img3 from "@/app/assets/cartoon2.png";
+import img2 from "@/app/assets/3dcartn.png";
+import cloud from "@/app/assets/cloud.png";
+import rocket from "@/app/assets/rocket.png";
 
 export default async function Home() {
   const { userId } = await auth();
@@ -44,33 +49,57 @@ export default async function Home() {
               Features
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-              <Card className="p-8 bg-gradient-to-br from-purple-500 to-pink-500 text-white h-full col-span-full lg:col-span-3">
-                <div className="space-y-4">
-                  <Sparkles className="w-8 h-8" />
-                  <h3 className="text-2xl font-bold">Complete Anonymity</h3>
-                  <p className="text-purple-100">
-                    Our advanced encryption ensures your identity stays hidden.
-                    Express yourself without fear.
+              <Card className="col-span-full flex items-end lg:col-span-3 h-64 relative bg-gradient-to-br from-yellow-500 to-amber-200">
+                <Image
+                  src={img2}
+                  alt="Feature 1"
+                  width={500}
+                  height={500}
+                  className="absolute object-cover object-top bottom-0 -translate-x-20 z-0"
+                />
+                <div className="space-y-4 mt-auto text-end ml-auto p-8">
+                  <h3 className="text-2xl md:text-3xl tracking-tighter font-bold text-yellow-900">
+                    Complete Anonymity
+                  </h3>
+                  <p className="max-w-xs leading-snug">
+                    Get totally anonymous messages from your friends and family
                   </p>
                 </div>
               </Card>
 
-              <Card className="p-8 h-full bg-purple-100 dark:bg-purple-900 col-span-full lg:col-span-2">
-                <div className="space-y-4">
-                  <Shield className="w-8 h-8 text-purple-600 dark:text-purple-400" />
-                  <h3 className="text-2xl font-bold">End-to-End Encrypted</h3>
-                  <p className="text-muted-foreground">
-                    Your messages are only visible to you and your recipients.
+              <Card className="flex items-end h-full bg-gradient-to-br from-cyan-400 to-blue-200 col-span-full lg:col-span-2 relative">
+                <Image
+                  src={cloud}
+                  alt="cloud"
+                  width={200}
+                  height={200}
+                  className="absolute size-48 -top-6 z-0"
+                />
+                <div className="space-y-4 mt-auto text-end ml-auto p-8">
+                  <h3 className="text-2xl md:text-3xl tracking-tighter text-blue-900 font-bold">
+                    Saved on the Cloud
+                  </h3>
+                  <p className="pl-10 max-w-sw leading-snug">
+                    Access your messages from anywhere in the world.
                   </p>
                 </div>
               </Card>
 
-              <Card className="p-8 bg-yellow-100 dark:bg-yellow-900/50 col-span-full lg:col-span-2">
-                <div className="space-y-4">
-                  <Zap className="w-8 h-8 text-yellow-600 dark:text-yellow-400" />
-                  <h3 className="text-2xl font-bold">Instant Delivery</h3>
-                  <p className="text-muted-foreground">
-                    Messages are delivered in real-time, anywhere in the world.
+              <Card className="flex group items-end h-52 bg-gradient-to-br from-rose-400 to-red-200 col-span-full lg:col-span-2 relative">
+                <Image
+                  src={rocket}
+                  alt="cloud"
+                  width={200}
+                  height={200}
+                  className="absolute size-48 -top-10 -left-4 z-0 group-hover:scale-125
+                   transition-all duration-500"
+                />
+                <div className="space-y-4 mt-auto text-end ml-auto px-8 py-6">
+                  <h3 className="text-2xl md:text-3xl tracking-tighter text-rose-900 font-bold">
+                    Build for Scalability
+                  </h3>
+                  <p className="pl-10 max-w-sw leading-snug">
+                    Built using the latest technologies for scalability.
                   </p>
                 </div>
               </Card>

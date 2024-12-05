@@ -59,6 +59,8 @@ const HeroSection = () => {
             alt="Cartoon character"
             width={720}
             fetchPriority="high"
+            loading="eager"
+            quality={85}
             height={800}
             className="w-full max-w-[720px] mx-auto img-drop-shadow select-none pointer-events-none"
           />

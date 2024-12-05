@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
+        formats: ["image/avif", "image/webp"],
         remotePatterns: [
             {
                 hostname: "img.clerk.com",
@@ -22,7 +23,7 @@ const withPWA = require("next-pwa")({
                 cacheName: "clerk-images",
                 expiration: {
                     maxEntries: 100,
-                    maxAgeSeconds: 60 * 60 * 24 * 30, // 30 days
+                    maxAgeSeconds: 60 * 60 * 24 * 30,
                 },
             },
         },
