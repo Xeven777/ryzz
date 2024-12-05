@@ -5,10 +5,13 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import {
   ArrowRight,
+  FacebookIcon,
+  InstagramIcon,
   MessageSquare,
   Shield,
   Sparkle,
   Sparkles,
+  Twitter,
   Users,
   Zap,
 } from "lucide-react";
@@ -16,16 +19,19 @@ import { VelocityScroll } from "./ui/scroll-based-velocity";
 import img1 from "@/app/assets/cartoon1.png";
 import Image from "next/image";
 import Link from "next/link";
+import InstallBtn from "./Installbtn";
+import { cn } from "@/lib/utils";
+import { mono } from "@/lib/font";
 
 export default function LandingPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-purple-50 dark:from-purple-950 to-background">
-      <header className="sticky top-0 w-full z-50 bg-background/60 backdrop-blur-lg">
+      <header className="sticky top-0 w-full z-50 bg-background/60 backdrop-blur-lg rounded-b-3xl">
         <nav className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="text-2xl logo font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600"
+            className="text-3xl px-1 logo font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-violet-600"
           >
             Ryzz
           </motion.div>
@@ -39,13 +45,12 @@ export default function LandingPage() {
       <main className="pb-16 md:px-4">
         <div className="mx-auto space-y-24">
           {/* Hero Section */}
-          <section className="relative flex items-center justify-center flex-col bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-cyan-400 via-blue-500 to-purple-600 rounded-3xl min-h-[770px] overflow-hidden">
+          <section className="relative flex items-center justify-center flex-col bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-cyan-400 via-blue-500 to-purple-600 rounded-3xl min-h-[770px] overflow-hidden text-white">
             <div className="absolute inset-0 bg-[linear-gradient(to_right,#f0f0f01a_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f01b_1px,transparent_1px)] bg-[size:6rem_4rem] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)]"></div>
             <Sparkle
               className="size-16 fill-accent text-accent absolute top-24 left-20 animate-shake"
               strokeWidth={"1px"}
             />
-
             <Sparkle
               className="size-16 fill-accent text-accent absolute bottom-16 right-20 animate-shake"
               strokeWidth={"1px"}
@@ -56,6 +61,17 @@ export default function LandingPage() {
                 default_velocity={4}
                 className="text-center text-4xl font-bold tracking-tight text-white md:text-7xl leading-relaxed"
               />
+            </div>
+
+            <div className="absolute left-4 bottom-20 px-2 max-w-sm md:text-xl text-lg leading-normal flex flex-col gap-4">
+              <h2 className="logo ryzz text-3xl md:text-8xl select-none px-1">
+                Ryzz
+              </h2>
+              <p className="select-none">
+                Create an account and start getting anonymous & secret messages
+                from your friends!!🤩🤪🤫
+              </p>
+              <InstallBtn className="text-black w-fit mx-2 mt-1" />
             </div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -90,6 +106,34 @@ export default function LandingPage() {
                 </Button>
               </Link>
             </motion.div>
+            <div className="grid grid-cols-2 gap-4 border border-slate-200/15 rounded-3xl p-2 absolute top-32 gap-y-2 right-12">
+              <div className="bg-accent aspect-square rounded-full size-11 flex items-center justify-center cursor-pointer hover:brightness-110 hover:scale-105 duration-300">
+                <p className="logo text-3xl pt-1 text-accent-foreground">R</p>
+              </div>
+              <div className="bg-slate-200/15 aspect-square rounded-full size-11 flex items-center justify-center cursor-pointer hover:brightness-110 hover:scale-105 duration-300">
+                <FacebookIcon color="white" />
+              </div>
+              <div className="bg-slate-200/15 aspect-square rounded-full size-11 flex items-center justify-center cursor-pointer hover:brightness-110 hover:scale-105 duration-300">
+                <InstagramIcon color="white" />
+              </div>
+              <div className="bg-slate-200/15 aspect-square rounded-full size-11 flex items-center justify-center cursor-pointer hover:brightness-110 hover:scale-105 duration-300">
+                <Twitter color="white" />
+              </div>
+            </div>
+            <div className="absolute top-1/2 right-12 flex flex-col gap-4 text-end">
+              <div>
+                <h3 className={cn(mono.className, "text-3xl font-bold")}>
+                  100+
+                </h3>
+                <p>Users</p>
+              </div>
+              <div>
+                <h3 className={cn(mono.className, "text-3xl font-bold")}>
+                  2300+
+                </h3>
+                <p>Messages</p>
+              </div>
+            </div>
           </section>
 
           {/* Features Grid */}

@@ -1,15 +1,9 @@
 import type { Metadata, Viewport } from "next";
-import { Funnel_Sans } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
 import "./globals.css";
 import Clarity from "@/components/Clarity";
 import { ThemedToaster, ThemeProvider } from "@/components/ThemeProvider";
-
-const mona = Funnel_Sans({
-  subsets: ["latin"],
-  display: "swap",
-  fallback: ["Arial", "system-ui", "sans-serif"],
-});
+import { funnel } from "@/lib/font";
 
 export const metadata: Metadata = {
   title: "Ryzz",
@@ -56,7 +50,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={mona.className}>
+      <body className={funnel.className}>
         <ThemeProvider attribute="class" defaultTheme="light">
           <ClerkProvider
             appearance={{
