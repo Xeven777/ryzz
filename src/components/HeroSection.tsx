@@ -46,7 +46,7 @@ const HeroSection = () => {
             Create an account and start getting anonymous & secret messages from
             your friends!!🤩🤪🤫
           </p>
-          <InstallBtn className="text-black w-fit mx-2 mt-1" />
+          <InstallBtn className="text-black w-fit md:mx-2 mt-1" />
         </div>
         <motion.div
           initial={{ opacity: 0, y: 20 }}

@@ -42,18 +42,18 @@ export default async function Home() {
         <div className="mx-auto space-y-40">
           <HeroSection />
 
-          <section className="max-w-6xl mx-auto">
+          <section className="max-w-6xl mx-auto px-2">
             <h2 className="text-center mb-8 text-6xl tracking-tighter font-semibold bg-gradient-to-b from-foreground via-foreground/90 to-muted-foreground/70 bg-clip-text text-transparent">
               Features
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-              <Card className="col-span-full group flex items-end lg:col-span-3 h-64 relative bg-gradient-to-br from-yellow-500 to-amber-200">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+              <Card className="col-span-full group flex items-end lg:col-span-3 h-64 relative bg-gradient-to-br from-yellow-500 to-amber-200 overflow-hidden md:overflow-auto">
                 <Image
                   src={img2}
                   alt="Feature 1"
                   width={500}
                   height={500}
-                  className="absolute group-hover:-translate-x-12 duration-500 object-cover object-top bottom-0 -translate-x-20 z-0"
+                  className="absolute group-hover:-translate-x-12 duration-500 object-cover object-top -translate-x-40 bottom-0 md:-translate-x-20"
                 />
                 <div className="space-y-4 mt-auto text-end ml-auto p-8">
                   <h3 className="text-2xl md:text-3xl tracking-tighter font-bold text-yellow-900">
@@ -65,13 +65,13 @@ export default async function Home() {
                 </div>
               </Card>
 
-              <Card className="flex items-end group h-full bg-gradient-to-br from-cyan-400 to-blue-200 col-span-full lg:col-span-2 relative">
+              <Card className="flex h-56 items-end group md:h-full bg-gradient-to-br from-cyan-400 to-blue-200 col-span-full lg:col-span-2 relative">
                 <Image
                   src={cloud}
                   alt="cloud"
                   width={200}
                   height={200}
-                  className="absolute size-48 -top-6 z-0 group-hover:scale-105 group-hover:-top-12 duration-500"
+                  className="absolute size-40 md:size-48 -top-6 z-0 group-hover:scale-105 group-hover:-top-12 duration-500"
                 />
                 <div className="space-y-4 mt-auto text-end ml-auto p-8">
                   <h3 className="text-2xl md:text-3xl tracking-tighter text-blue-900 font-bold">
@@ -108,7 +108,7 @@ export default async function Home() {
                   alt="emoji"
                   width={200}
                   height={200}
-                  className="absolute size-60 -top-10 left-8 z-0 group-hover:scale-110 group-hover:rotate-3 duration-500"
+                  className="absolute size-40 md:size-60 -top-6 md:-top-10 left-2 md:left-8 z-0 group-hover:scale-110 group-hover:rotate-3 duration-500"
                 />
                 <div className="space-y-4 mt-auto text-end ml-auto px-8 py-6">
                   <h3 className="text-2xl md:text-3xl tracking-tighter text-lime-900 font-bold">
@@ -123,11 +123,11 @@ export default async function Home() {
           </section>
 
           {/* CTA Section */}
-          <section className="text-center">
+          <section className="text-center px-2">
             <div className="max-w-3xl mx-auto space-y-8">
-              <Card className="p-12 bg-gradient-to-br from-accent to-accent/70 rounded-3xl box-glow">
+              <Card className="md:p-12 py-10 px-6 bg-gradient-to-br from-accent to-accent/70 rounded-3xl box-glow">
                 <div className="space-y-6">
-                  <MessageSquare className="w-12 h-12 mx-auto text-primary" />
+                  <MessageSquare className="size-12 mx-auto text-primary" />
                   <h2 className="text-3xl md:text-4xl font-bold text-black tracking-tight">
                     Ready to start messaging?
                   </h2>
