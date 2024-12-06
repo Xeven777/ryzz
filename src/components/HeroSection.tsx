@@ -40,7 +40,7 @@ const HeroSection = () => {
           strokeWidth={"1px"}
         />
         <Sparkle
-          className="size-16 fill-accent text-accent hidden md:absolute bottom-16 right-20 animate-shake"
+          className="size-16 fill-accent text-accent hidden md:block absolute bottom-16 right-20 animate-shake"
           strokeWidth={"1px"}
         />
         <div className="md:h-28 bg-slate-200/20 w-full absolute top-0">

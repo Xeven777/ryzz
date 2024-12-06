@@ -1,36 +1,24 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Ryzz - Get Anonymous Messages From Your Friends! 🤩
 
-## Getting Started
+Ryzz is a web application that lets you receive anonymous messages from friends and family in a fun and secure way.
 
-First, run the development server:
+![Screenshot](src/app/opengraph-image.jpg)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Features ✨
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Complete anonymity - no IP tracking or user identification
+- Share messages on social media platforms
+- Customizable message cards with gradients
+- Instagram and Snapchat story templates
+- Modern, responsive UI
+- Secure authentication with Clerk
+- PWA support
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Tech Stack 🛠️
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [Next.js 14](https://nextjs.org/) - React framework
+- [TailwindCSS](https://tailwindcss.com/) - Styling
+- [Prisma](https://www.prisma.io/) - ORM
+- [MongoDB](https://www.mongodb.com/) - Database
+- [Clerk](https://clerk.com/) - Authentication
+- [shadcn/ui](https://ui.shadcn.com/) - UI Components
