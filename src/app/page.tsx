@@ -13,8 +13,8 @@ import rocket from "@/app/assets/rocket.png";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
 export default async function Home() {
-  // const { userId } = await auth();
-  // if (userId) redirect("/dashboard");
+  const { userId } = await auth();
+  if (userId) redirect("/dashboard");
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-purple-50 dark:from-purple-950 to-background">
