@@ -71,7 +71,7 @@ const HeroSection = () => {
           transition={{ delay: 0.4 }}
           className="absolute bottom-4 w-full text-center"
         >
-          <Link href={"/dashboard"}>
+          <Link href={"/sign-up"}>
             <Button
               size="lg"
               className="text-lg md:text-xl bg-accent text-accent-foreground hover:bg-accent/90 -rotate-3 scale-125 duration-500 pl-20 pr-10 hover:pr-20 hover:pl-10 rounded-full active:rotate-0 py-4 md:py-8 group"

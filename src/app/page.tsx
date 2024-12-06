@@ -32,7 +32,7 @@ export default async function Home() {
               <Link href={"/about"}>About</Link>
             </Button>
             <Button asChild>
-              <Link href={"/dashboard"}>Get Started</Link>
+              <Link href={"/sign-up"}>Get Started</Link>
             </Button>
           </div>
         </nav>
@@ -141,7 +141,7 @@ export default async function Home() {
                     className="text-lg bg-accent-foreground text-accent"
                     asChild
                   >
-                    <Link href={"/dashboard"}>
+                    <Link href={"/sign-up"}>
                       Let&apos;s Go!
                       <ArrowRight className="ml-2" size={30} />
                     </Link>
