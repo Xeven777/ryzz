@@ -18,7 +18,7 @@ export default async function Home() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-purple-50 dark:from-purple-950 to-background">
-      <header className="sticky top-0 w-full z-50 bg-background/60 backdrop-blur-lg rounded-b-3xl">
+      <header className="sticky top-0 w-full z-50 bg-background/70 backdrop-blur-xl rounded-b-3xl">
         <nav className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
           <div className="text-3xl px-1 logo font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-violet-600">
             Ryzz

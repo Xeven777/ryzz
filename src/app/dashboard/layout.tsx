@@ -1,4 +1,8 @@
-import InstallBtn from "@/components/Installbtn";
+import dynamic from "next/dynamic";
+const InstallBtn = dynamic(() => import("@/components/Installbtn"), {
+  ssr: false,
+  loading: () => <p>Install Now!🔥</p>,
+});
 import Navbar from "@/components/Navbar";
 
 export default function LayoutNotes({

@@ -13,7 +13,11 @@ import { VelocityScroll } from "./ui/scroll-based-velocity";
 import img1 from "@/app/assets/cartoon1.png";
 import Image from "next/image";
 import Link from "next/link";
-import InstallBtn from "./Installbtn";
+import dynamic from "next/dynamic";
+const InstallBtn = dynamic(() => import("@/components/Installbtn"), {
+  ssr: false,
+  loading: () => <p>Install Now!🔥</p>,
+});
 import { cn } from "@/lib/utils";
 import { mono } from "@/lib/font";
 import { useReward } from "react-rewards";
@@ -55,7 +59,7 @@ const HeroSection = () => {
             Create an account and start getting anonymous & secret messages from
             your friends!!🤩🤪🤫
           </p>
-          <InstallBtn className="text-black w-fit md:mx-2 mt-1" />
+          <InstallBtn className="w-fit md:mx-2 mt-1 text-foreground" />
         </div>
         <motion.div
           initial={{ opacity: 0, y: 20 }}

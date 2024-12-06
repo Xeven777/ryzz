@@ -4,7 +4,11 @@ import Link from "next/link";
 import React from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { clerkClient } from "@clerk/nextjs/server";
-import InstallBtn from "@/components/Installbtn";
+import dynamic from "next/dynamic";
+const InstallBtn = dynamic(() => import("@/components/Installbtn"), {
+  ssr: false,
+  loading: () => <p>Install Now!🔥</p>,
+});
 
 const SendMessages = async ({ params }: any) => {
   const { id } = await params;
