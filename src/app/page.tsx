@@ -41,13 +41,12 @@ export default async function Home() {
       <main className="pb-16 md:px-4">
         <div className="mx-auto space-y-40">
           <HeroSection />
-
           <section className="max-w-6xl mx-auto px-2">
             <h2 className="text-center mb-8 text-6xl tracking-tighter font-semibold bg-gradient-to-b from-foreground via-foreground/90 to-muted-foreground/70 bg-clip-text text-transparent">
               Features
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
-              <Card className="col-span-full group flex items-end lg:col-span-3 h-64 relative bg-gradient-to-br from-yellow-500 to-amber-200 overflow-hidden md:overflow-auto">
+              <Card className="col-span-full group flex items-end lg:col-span-3 h-64 relative bg-gradient-to-br from-yellow-500 to-amber-200 overflow-hidden md:overflow-visible">
                 <Image
                   src={img2}
                   alt="Feature 1"
@@ -121,7 +120,6 @@ export default async function Home() {
               </Card>
             </div>
           </section>
-
           {/* CTA Section */}
           <section className="text-center px-2">
             <div className="max-w-3xl mx-auto space-y-8">

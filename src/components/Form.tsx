@@ -6,18 +6,26 @@ import { Dices, Loader, SendIcon } from "lucide-react";
 import { prompts } from "@/lib/data";
 import { toast } from "sonner";
 import { Button } from "./ui/button";
+import { useReward } from "react-rewards";
 
 interface Props {
   userId: string;
 }
 
 const Form = ({ userId }: Props) => {
+  const { reward, isAnimating } = useReward("rewardId", "confetti", {
+    lifetime: 200,
+    elementCount: 90,
+    spread: 70,
+    zIndex: 9999,
+  });
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
   const handleSubmit = async (event: React.FormEvent) => {
-    setLoading(true);
-    const content = message;
     event.preventDefault();
+    setLoading(true);
+    reward();
+    const content = message;
     try {
       if (!content) {
         toast.warning("Oopsie😕,the Message is blank...", {
@@ -54,6 +62,8 @@ const Form = ({ userId }: Props) => {
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col items-center w-full">
+      <span id="rewardId" />
+
       <div className="relative w-full sm:w-5/12 min-w-[220px]">
         <Textarea
           placeholder="Show your Ryzz 🤪"
@@ -73,7 +83,7 @@ const Form = ({ userId }: Props) => {
         type="submit"
         className="mt-4 font-semibold text-lg md:text-xl"
         size={"lg"}
-        disabled={loading}
+        disabled={loading || isAnimating}
       >
         {loading ? (
           <Loader className="animate-spin ease-in-out" />

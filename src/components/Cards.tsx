@@ -18,6 +18,7 @@ import Message from "./Message";
 import { Separator } from "@/components/ui/separator";
 import { toast } from "sonner";
 import { Button } from "./ui/button";
+import { useReward } from "react-rewards";
 
 interface Props {
   message: string;
@@ -30,6 +31,13 @@ const Cards = ({ message, sentAt, messageId, seen }: Props) => {
   const [loading, setLoading] = useState(false);
   const [isSeen, setIsSeen] = useState(seen);
   const [deleted, setDeleted] = useState(false);
+  const { reward } = useReward("rewardId", "confetti", {
+    lifetime: 200,
+    elementCount: 90,
+    spread: 70,
+    zIndex: 9999,
+  });
+
   async function handleDelete() {
     setLoading(true);
     try {
@@ -52,8 +60,9 @@ const Cards = ({ message, sentAt, messageId, seen }: Props) => {
 
   async function handleSeen() {
     try {
+      reward();
       setIsSeen(true);
-      await fetch("api/messages", {
+      fetch("api/messages", {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -93,6 +102,7 @@ const Cards = ({ message, sentAt, messageId, seen }: Props) => {
             )}
           </Button>
         </CardFooter>
+        <span id="rewardId" />
       </Card>
 
       <DialogContent className="px-2 md:p-6">
