@@ -6,7 +6,6 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { clerkClient } from "@clerk/nextjs/server";
 import dynamic from "next/dynamic";
 const InstallBtn = dynamic(() => import("@/components/Installbtn"), {
-  ssr: false,
   loading: () => <p>Install Now!🔥</p>,
 });
 
