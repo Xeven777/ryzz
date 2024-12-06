@@ -7,7 +7,7 @@ import { funnel } from "@/lib/font";
 
 export const metadata: Metadata = {
   title: "Ryzz",
-  description: "Send Anonymous Messages to your Friends!",
+  description: "Send Anonymous Messages to your Friends!🤩",
   metadataBase: new URL("https://ryzz.vercel.app"),
   authors: [
     {
@@ -19,14 +19,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://ryzz.vercel.app",
-    images: [
-      {
-        url: "https://i.imgur.com/sRWGpL3l.png",
-        width: 1200,
-        height: 630,
-        alt: "Ryzz",
-      },
-    ],
+    title: "Ryzz",
   },
   manifest: "/manifest.json",
   icons: {

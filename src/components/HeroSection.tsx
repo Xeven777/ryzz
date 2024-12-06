@@ -38,7 +38,7 @@ const HeroSection = () => {
           />
         </div>
 
-        <div className="md:absolute mt-28 left-4 md:bottom-20 px-6 max-w-sm leading-normal flex flex-col gap-2 md:gap-4">
+        <div className="md:absolute mt-28 left-4 md:bottom-20 px-6 max-w-sm leading-normal flex flex-col gap-2 md:gap-4 z-10">
           <h2 className="logo ryzz text-5xl md:text-8xl select-none px-1">
             Ryzz
           </h2>
